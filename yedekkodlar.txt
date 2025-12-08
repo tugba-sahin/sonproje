@@ -114,7 +114,7 @@
      </div>
      <h1 id="institution-name" class="text-2xl font-bold text-center mb-2">Türkiye Diyanet Vakfı</h1>
      <h2 id="yurt-name" class="text-4xl font-bold text-center mb-3">TDV Samsun Atakum Yükseköğretim Kız Öğrenci Yurdu</h2>
-     <p id="motto" class="text-lg text-center opacity-90 italic">Yeryüzünde iyilik egemen oluncaya kadar</p>
+     <p id="motto" class="text-lg text-center opacity-90 italic">Yeryüzünde iyilik egemen oluncaya dek</p>
     </div>
    </header><!-- Ana Menü -->
    <main id="main-menu" class="max-w-7xl mx-auto px-6 py-12">
@@ -135,7 +135,7 @@
      </div>
      <div class="menu-card p-8 rounded-lg shadow-lg text-center" onclick="showPage('etkinlikler')">
       <div class="text-5xl mb-4">
-       ����
+           
       </div>
       <h3 class="text-xl font-bold text-gray-800 mb-2">Etkinlikler</h3>
       <p class="text-sm text-gray-600">Podcast &amp; Münazara</p>
@@ -144,7 +144,7 @@
       <div class="text-5xl mb-4">
        🎯
       </div>
-      <h3 class="text-xl font-bold text-gray-800 mb-2">Amacım��z</h3>
+      <h3 class="text-xl font-bold text-gray-800 mb-2">Amacım  z</h3>
       <p class="text-sm text-gray-600">Misyon &amp; Vizyon</p>
      </div>
      <div class="menu-card p-8 rounded-lg shadow-lg text-center" onclick="showPage('hakkimizda')">
@@ -499,7 +499,7 @@
        </div>
        <h3 class="text-2xl font-bold text-gray-800">Vizyonumuz</h3>
       </div>
-      <p class="text-gray-700 leading-relaxed">Türkiye'nin dört bir yanından gelen öğrencilerimizi bir arada buluşturarak, dayanışma, payla����ım ve kardeşlik duygularını pekiştiren, geleceğin lider kadınlarını yetiştiren bir merkez olmayı amaçlıyoruz. Yeryüzünde iyiliğin egemen olması için çalışan, bilinçli, üretken ve topluma faydalı bireyler yetiştirmek vizyonumuzdur.</p>
+      <p class="text-gray-700 leading-relaxed">Türkiye'nin dört bir yanından gelen öğrencilerimizi bir arada buluşturarak, dayanışma, payla    ım ve kardeşlik duygularını pekiştiren, geleceğin lider kadınlarını yetiştiren bir merkez olmayı amaçlıyoruz. Yeryüzünde iyiliğin egemen olması için çalışan, bilinçli, üretken ve topluma faydalı bireyler yetiştirmek vizyonumuzdur.</p>
      </div>
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
@@ -530,7 +530,7 @@
     <div class="space-y-6">
      <div class="content-card p-6 rounded-lg shadow-lg">
       <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3"><span class="text-4xl">🏢</span> Türkiye Diyanet Vakfı</h3>
-      <p class="text-gray-700 leading-relaxed mb-4">Türkiye Diyanet Vakfı, 1975 yılında kurulmuş olup, eğitim ve sosyal yardım alanlarında faaliyet gösteren köklü bir vakıftır. Yurt içi ve yurt dışında birçok eğitim kurumu işletmekte, burslar sa��lamakta ve sosyal sorumluluk projelerine öncülük etmektedir.</p>
+      <p class="text-gray-700 leading-relaxed mb-4">Türkiye Diyanet Vakfı, 1975 yılında kurulmuş olup, eğitim ve sosyal yardım alanlarında faaliyet gösteren köklü bir vakıftır. Yurt içi ve yurt dışında birçok eğitim kurumu işletmekte, burslar sa  lamakta ve sosyal sorumluluk projelerine öncülük etmektedir.</p>
      </div>
      <div class="content-card p-6 rounded-lg shadow-lg">
       <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3"><span class="text-4xl">🏠</span> Yurdumuz</h3>
@@ -549,7 +549,7 @@
        <div class="flex items-start gap-2"><span class="text-xl">✅</span>
         <p class="text-gray-700">Konforlu ve güvenli konaklama</p>
        </div>
-       <div class="flex items-start gap-2"><span class="text-xl">���</span>
+       <div class="flex items-start gap-2"><span class="text-xl">   </span>
         <p class="text-gray-700">Dengeli ve düzenli beslenme</p>
        </div>
        <div class="flex items-start gap-2"><span class="text-xl">✅</span>
@@ -568,8 +568,8 @@
      </div>
     </div>
    </div><!-- Kahve Günü Sayfası -->
-   <div id="kahve-gunu-page" class="hidden max-w-7xl mx-auto px-6 py-8"><button onclick="showPage('topluluklar')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>���</span> Topluluklara Dön </button>
-    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">��� Kahve Günü Etkinliği</h2>
+   <div id="kahve-gunu-page" class="hidden max-w-7xl mx-auto px-6 py-8"><button onclick="showPage('topluluklar')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>   </span> Topluluklara Dön </button>
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">    Kahve Günü Etkinliği</h2>
     <div class="content-card p-6 rounded-lg shadow-lg">
      <p class="text-gray-700 text-center text-lg mb-6">Kültür ve Sanat Topluluğu tarafından düzenlenen kahve günü etkinliğimizden görüntüler. Öğrencilerimiz bir araya gelerek keyifli sohbetler eşliğinde kahve kültürünü keşfetti.</p>
      <div class="mb-4">
@@ -724,4 +724,4 @@
     });
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9aa60c6823b4d5ef',t:'MTc2NTEzMTc0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html> 
+</html>
