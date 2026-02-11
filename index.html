@@ -686,7 +686,10 @@
       </div>
      </div>
     </div>
-   </div><!-- Etkinlikler Sayfası -->
+   </div>
+   
+   
+   <!-- Etkinlikler Sayfası -->
    <div id="etkinlikler-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Etkinlikler</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -733,7 +736,9 @@
       </div>
      </div>
     </div>
-   </div><!-- Münazara Fotoğrafları Sayfası -->
+   </div>
+   
+   <!-- Münazara Fotoğrafları Sayfası -->
    <div id="munazara-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('etkinlikler')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Etkinliklere Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">⚖️ Münazara Fotoğrafları</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -762,10 +767,15 @@
       </div>
      </div>
     </div>
-   </div><!-- Videolar Sayfası -->
+   </div>
+   
+   
+   
+   
+   <!-- Videolar Sayfası -->
    <div id="videolar-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎬 Videolar</h2>
-    <div class="space-y-6"><!-- Kahve G  nü Videosu -->
+    <div class="space-y-6"><!-- Kahve Günü Videosu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -783,7 +793,9 @@
        </div>
        <p class="text-xs text-amber-600 font-semibold mt-3 text-center">Kahve kültürü ve keyifli sohbet anları</p>
       </div>
-     </div><!-- İyilik Kedi Videosu -->
+     </div>
+     
+     <!-- İyilik Kedi Videosu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -801,7 +813,28 @@
        </div>
        <p class="text-xs text-blue-600 font-semibold mt-3 text-center">Sokak dostlarımıza gösterdiğimiz sevgi ve ilgi</p>
       </div>
-     </div><!-- Gençlik Merkezi Filistin Konferansı -->
+     </div>
+     <!-- yerli malı haftası videosu -->
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="flex items-center gap-4 mb-4">
+       <div class="text-5xl">
+        🇹🇷
+       </div>
+       <h3 class="text-2xl font-bold text-gray-800">Yerli Malı Haftası Etkinliği</h3>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-4">Yerli Malı Haftasının gelmesi ile birlikte yurdumuzda gerçekleştirdiğimiz yerli malı haftasına ait videomuz .</p>
+      <div class="bg-blue-50 p-4 rounded-lg">
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/yerlimalı.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       </video>
+       <div style="display: none;" class="text-center py-12 text-gray-500">
+        <p class="text-6xl mb-2"></p>
+        <p>İyilik Kedi Videosu</p>
+       </div>
+       <p class="text-xs text-blue-600 font-semibold mt-3 text-center">Yerli Malı Haftası Etkinliğimizden Videomuz </p>
+      </div>
+     </div>
+     
+     <!-- Gençlik Merkezi Filistin Konferansı -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -819,7 +852,12 @@
        </div>
        <p class="text-xs text-green-600 font-semibold mt-3 text-center">Gençlik Merkezi işbirliği ile gerçekleştirildi</p>
       </div>
-     </div><!-- Şehit Öğretmenler Anma Videosu -->
+      
+      
+      </div>
+      
+      
+      <!-- Şehit Öğretmenler Anma Videosu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -837,7 +875,54 @@
        </div>
        <p class="text-xs text-red-600 font-semibold mt-3 text-center">Şehitlerimizi minnetle anıyoruz</p>
       </div>
-     </div><!-- AFAD Afet Eğitimi Videosu -->
+     </div>
+
+
+     <!-- sanat atölyesi videosu -->
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="flex items-center gap-4 mb-4">
+       <div class="text-5xl">
+        🖌️
+       </div>
+       <h3 class="text-2xl font-bold text-gray-800"> Sanat Atolyesi Etkinliğimiz  </h3>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-4">Sanat Atolyesi ile Birlikte Gerçekleştirdiğimiz Vision Board Çalışması  .</p>
+      <div class="bg-red-50 p-4 rounded-lg"><!-- Video: images/sanat.mp4 -->
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/sanat.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       </video><!-- Video yüklenemezse gösterilecek yedek içerik -->
+       <div style="display: none;" class="text-center py-12 text-gray-500">
+        <p class="text-6xl mb-2">🕊️</p>
+        <p>Şehit Öğretmenler Videosu</p>
+       </div>
+       <p class="text-xs text-red-600 font-semibold mt-3 text-center"> Sanat Atolyesi Çalışmalarımız </p>
+      </div>
+     </div>
+
+          <!-- Razaman Vision Board  -->
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="flex items-center gap-4 mb-4">
+       <div class="text-5xl">
+        🫓
+       </div>
+       <h3 class="text-2xl font-bold text-gray-800">Ramazan Vision Board </h3>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-4">Ramazan'ın Gelmesi İle Ramazanda Gerçekleştirmek istediğimiz etkinliklerle Vision Board Çalışmamız </p>
+      <div class="bg-green-50 p-4 rounded-lg">
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/ramazan.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       </video>
+       <div style="display: none;" class="text-center py-12 text-gray-500">
+        <p class="text-6xl mb-2">🇵🇸</p>
+        <p>Ramazan Vision Board Videosu</p>
+       </div>
+       <p class="text-xs text-green-600 font-semibold mt-3 text-center">Ramazan Gelmiş Hoşgelmiş...</p>
+      </div>
+      
+      
+      </div>
+     
+     
+     
+     <!-- AFAD Afet Eğitimi Videosu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -857,7 +942,11 @@
       </div>
      </div>
     </div>
-   </div><!-- Hakkımızda Sayfası -->
+   </div>
+   
+   
+   
+   <!-- Hakkımızda Sayfası -->
    <div id="hakkimizda-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Hakkımızda</h2>
     <div class="space-y-6">
