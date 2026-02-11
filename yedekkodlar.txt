@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" class="h-full">
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,178 +7,145 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/_sdk/element_sdk.js"></script>
   <style>
+    /* Temel kutu modeli ayarı - tüm elementler için */
     body {
       box-sizing: border-box;
     }
     
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      width: 100%;
-    }
-
-    .page-container {
-      min-height: 100%;
-      width: 100%;
-      transition: background-color 0.3s ease;
-    }
-
+    /* Başlık alanı için mavi gradient arka plan */
     .header-gradient {
       background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-      transition: background 0.3s ease;
     }
-
-    .menu-card {
-      transition: all 0.3s ease;
-      cursor: pointer;
-      background: white;
+    
+    /* Ana menü butonları - beyaz arka plan ve geçiş efekti */
+    .menu-button {
+      transition: all 0.3s ease; /* Yumuşak geçiş animasyonu */
+      background-color: white;
     }
-
-    .menu-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      border: 2px solid #2563eb;
+    
+    /* Menü butonlarına mouse ile gelindiğinde yukarı kalkma efekti */
+    .menu-button:hover {
+      transform: translateY(-5px); /* 5 piksel yukarı */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Gölge efekti */
     }
-
+    
+    /* İçerik kartları - beyaz arka plan ve geçiş efekti */
     .content-card {
+      background-color: white;
       transition: all 0.3s ease;
-      background: white;
     }
-
+    
+    /* İçerik kartlarına mouse ile gelindiğinde hafif yükselme */
     .content-card:hover {
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     }
-
+    
+    /* Fotoğraf kartları için hover efekti */
     .photo-card {
-      overflow: hidden;
-      border-radius: 0.5rem;
-      background: white;
-    }
-
-    .photo-card img {
       transition: transform 0.3s ease;
     }
-
-    .photo-card:hover img {
-      transform: scale(1.05);
+    
+    /* Fotoğraflara mouse ile gelindiğinde büyütme efekti */
+    .photo-card:hover {
+      transform: scale(1.05); /* %5 büyütme */
     }
-
-    .calendar-image {
-      width: 100%;
-      height: auto;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo-circle {
-      width: 80px;
-      height: 80px;
-      background: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
+    
+    /* Geri dönüş butonu için animasyon */
     .back-button {
       transition: all 0.3s ease;
     }
-
+    
+    /* Geri butonuna mouse ile gelindiğinde sola kayma efekti */
     .back-button:hover {
-      transform: translateX(-4px);
-      opacity: 0.9;
-    }
-
-    .hidden {
-      display: none !important;
+      transform: translateX(-5px); /* 5 piksel sola */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
- <body>
-  <div class="page-container" style="background-color: #f5f5f5;"><!-- Header -->
-   <header class="header-gradient text-white py-8 shadow-lg">
-    <div class="max-w-7xl mx-auto px-6">
-     <div class="flex items-center justify-center gap-8 mb-6">
-      <div class="logo-circle"><img src="images/tdv.jpg" alt="TDV Logo" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"> <span class="text-4xl" style="display: none;">🕌</span>
-      </div>
-      <div class="logo-circle"><img src="images/diyanet.jpg" alt="Diyanet Logo" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"> <span class="text-4xl" style="display: none;">🏛️</span>
-      </div>
-     </div>
-     <h1 id="institution-name" class="text-2xl font-bold text-center mb-2">Türkiye Diyanet Vakfı</h1>
-     <h2 id="yurt-name" class="text-4xl font-bold text-center mb-3">TDV Samsun Atakum Yükseköğretim Kız Öğrenci Yurdu</h2>
-     <p id="motto" class="text-lg text-center opacity-90 italic">Yeryüzünde iyilik egemen oluncaya dek</p>
+ <body class="h-full">
+  <div class="min-h-full w-full flex flex-col" style="background-color: #f5f5f5;"><!-- Header -->
+   <header class="header-gradient text-white shadow-lg overflow-visible min-h-fit py-16 md:py-20">
+
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <!-- Logo Alanı -->
+<div class="flex justify-center items-center gap-6 mb-4">
+  <img 
+    src="images/tdv.jpg" 
+    alt="TDV Logo"
+    class="w-30 h-28 rounded-full object-cover bg-white p-2 shadow-md"
+  >
+
+  <img 
+    src="images/diyanet.jpg" 
+    alt="Diyanet Logo"
+    class="w-30 h-28 rounded-full object-cover bg-white p-2 shadow-md"
+  >
+</div>
+
+     <h1 id="main-institution" class="text-3xl md:text-4xl font-bold mb-2">Türkiye Diyanet Vakfı</h1>
+     <h2 id="main-title" class="text-xl md:text-2xl font-semibold mb-3">Samsun Atakum Yükseköğretim Kız Öğrenci Yurdu</h2>
+     <p id="motto" class="text-base md:text-lg opacity-90 italic">Yeryüzünde iyilik egemen oluncaya dek</p>
     </div>
    </header><!-- Ana Menü -->
-   <main id="main-menu" class="max-w-7xl mx-auto px-6 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
-     <div class="menu-card p-8 rounded-lg shadow-lg text-center" onclick="showPage('topluluklar')">
-      <div class="text-5xl mb-4">
+   <div id="main-menu" class="max-w-7xl mx-auto px-6 py-12 w-full"><!-- Üst Sıra: 5 Ana Buton -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-6"><!-- Topluluklar --> <button onclick="showPage('topluluklar')" class="menu-button p-8 rounded-xl shadow-lg text-center">
+      <div class="text-6xl mb-4">
        👥
-      </div>
-      <h3 class="text-xl font-bold text-gray-800 mb-2">Topluluklar</h3>
-      <p class="text-sm text-gray-600">5 Topluluk</p>
-     </div>
-     <div class="menu-card p-8 rounded-lg shadow-lg text-center" onclick="showPage('atolyeler')">
-      <div class="text-5xl mb-4">
+      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Topluluklar</h3><p class="text-gray-600">Yurdumuzdaki aktif topluluklar</p></button> <!-- Atölyeler --> <button onclick="showPage('atolyeler')" class="menu-button p-8 rounded-xl shadow-lg text-center">
+      <div class="text-6xl mb-4">
        🎨
-      </div>
-      <h3 class="text-xl font-bold text-gray-800 mb-2">Atölyeler</h3>
-      <p class="text-sm text-gray-600">4 Atölye</p>
-     </div>
-     <div class="menu-card p-8 rounded-lg shadow-lg text-center" onclick="showPage('etkinlikler')">
-      <div class="text-5xl mb-4">
-           
-      </div>
-      <h3 class="text-xl font-bold text-gray-800 mb-2">Etkinlikler</h3>
-      <p class="text-sm text-gray-600">Podcast &amp; Münazara</p>
-     </div>
-     <div class="menu-card p-8 rounded-lg shadow-lg text-center" onclick="showPage('amacimiz')">
-      <div class="text-5xl mb-4">
-       🎯
-      </div>
-      <h3 class="text-xl font-bold text-gray-800 mb-2">Amacım  z</h3>
-      <p class="text-sm text-gray-600">Misyon &amp; Vizyon</p>
-     </div>
-     <div class="menu-card p-8 rounded-lg shadow-lg text-center" onclick="showPage('hakkimizda')">
-      <div class="text-5xl mb-4">
+      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Atölyeler</h3><p class="text-gray-600">Çeşitli atölye çalışmaları</p></button> <!-- Etkinlikler --> <button onclick="showPage('etkinlikler')" class="menu-button p-8 rounded-xl shadow-lg text-center">
+      <div class="text-6xl mb-4">
+       🎉
+      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Etkinlikler</h3><p class="text-gray-600">Düzenlenen özel etkinlikler</p></button> <!-- Videolar --> <button onclick="showPage('videolar')" class="menu-button p-8 rounded-xl shadow-lg text-center">
+      <div class="text-6xl mb-4">
+       🎬
+      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Videolar</h3><p class="text-gray-600">Etkinlik videoları</p></button> <!-- Hakkımızda --> <button onclick="showPage('hakkimizda')" class="menu-button p-8 rounded-xl shadow-lg text-center">
+      <div class="text-6xl mb-4">
        ℹ️
-      </div>
-      <h3 class="text-xl font-bold text-gray-800 mb-2">Hakkımızda</h3>
-      <p class="text-sm text-gray-600">İletişim &amp; Bilgi</p>
-     </div>
-    </div><!-- Etkinlik Takvimi -->
-    <div class="content-card p-8 rounded-lg shadow-lg">
+      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Hakkımızda</h3><p class="text-gray-600">Yurdumuz hakkında bilgi</p></button>
+    </div><!-- Alt Sıra: 4 İkincil Buton -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Duyurular --> <button onclick="showPage('duyurular')" class="menu-button p-8 rounded-xl shadow-lg text-center">
+      <div class="text-6xl mb-4">
+       📢
+      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Duyurular</h3><p class="text-gray-600">Güncel duyurular</p></button> <!-- En Temiz Oda --> <button onclick="showPage('en-temiz-oda')" class="menu-button p-8 rounded-xl shadow-lg text-center">
+      <div class="text-6xl mb-4">
+       🏆
+      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">En Temiz Oda</h3><p class="text-gray-600">Haftanın kazananları</p></button> <!-- Şiir Köşesi --> <button onclick="showPage('siir-kosesi')" class="menu-button p-8 rounded-xl shadow-lg text-center">
+      <div class="text-6xl mb-4">
+       📝
+      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Şiir Köşesi</h3><p class="text-gray-600">Haftanın şiirleri</p></button> <!-- Amacımız --> <button onclick="showPage('amacimiz')" class="menu-button p-8 rounded-xl shadow-lg text-center">
+      <div class="text-6xl mb-4">
+       🎯
+      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Amacımız</h3><p class="text-gray-600">Misyon ve vizyonumuz</p></button>
+    </div><!-- Etkinlik Takvimi Bölümü - Ana Sayfada Alt Kısımda -->
+    <div class="content-card p-8 rounded-lg shadow-lg mt-8">
      <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">📅 Etkinlik Takvimi</h3>
-     <div class="text-center"><img src="images/takvim.jpg" alt="Etkinlik Takvimi" class="calendar-image mx-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+     <div class="text-center"><!-- Takvim resmi - images/takvim.jpg --> <img src="images/takvim.jpg" alt="Etkinlik Takvimi" class="mx-auto rounded-lg shadow-md max-w-full h-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"> <!-- Resim yüklenemezse gösterilecek yedek içerik -->
       <div style="display: none;" class="text-gray-500 py-12">
        <p class="text-5xl mb-4">📅</p>
        <p>Takvim resmi yükleniyor...</p>
       </div>
      </div>
     </div>
-   </main><!-- Topluluklar Sayfası -->
-   <div id="topluluklar-page" class="hidden max-w-7xl mx-auto px-6 py-8"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
+   </div><!-- Topluluklar Sayfası -->
+   <div id="topluluklar-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Topluluklar</h2>
-    <div class="space-y-6">
+    <div class="space-y-6"><!-- 1. İnovasyon ve Teknoloji Topluluğu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
-       <div class="text-4xl">
-        💡
+       <div class="text-5xl">
+        💻
        </div>
        <div>
-        <h3 class="text-xl font-bold text-gray-800">İnovasyon ve Teknoloji Topluluğu</h3>
+        <h3 class="text-2xl font-bold text-gray-800">İnovasyon ve Teknoloji Topluluğu</h3>
         <p class="text-sm text-blue-600 font-semibold">Başkan: Tuğba Şahin</p>
        </div>
       </div>
-      <p class="text-gray-700 leading-relaxed mb-4"><strong>Amaç:</strong> Teknoloji ve inovasyon alanında farkındalık yaratmak, öğrencilerin dijital yetkinliklerini geliştirmek ve geleceğin teknolojilerine hazırlamak.</p>
+      <p class="text-gray-700 leading-relaxed">Teknoloji, yazılım ve inovasyon alanlarında öğrencilerimizin gelişimini destekleyen, modern çağın gereksinimlerine uygun projeler üreten topluluk.</p>
       <div class="bg-purple-50 p-4 rounded-lg">
        <h4 class="text-xl font-bold text-purple-800 mb-4 flex items-center justify-center gap-2">💻 Web Sitesi ve QR Kod Projesi</h4>
        <p class="text-gray-700 text-center mb-4">Topluluğumuz tarafından geliştirilen web sitesi ve QR kod çalışmalarından görüntüler.</p>
@@ -198,19 +165,52 @@
        </div>
        <p class="text-xs text-purple-600 font-semibold mt-3 text-center">Teknoloji ve inovasyon projelerimizden kareler.</p>
       </div>
+
+      <!--ETKİNLİK SİTE BİTİŞİ -->
+      <!-- AFİŞLER BAŞLANGIÇ-->
+
+       <div class="bg-purple-50 p-4 rounded-lg">
+
+       <h4 class="text-xl font-bold text-purple-800 mb-4 flex items-center justify-center gap-2">💻 Afiş Çalışmalarımız </h4>
+       <p class="text-gray-700 text-center mb-4">Topluluğumuz tarafından yapılan afiş çalışmaları.</p>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="photo-card p-1"><img src="images/endulus1.jpg" alt="Web Sitesi Projesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📑</p>
+          <p>Endulus Afişleri</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/endulus2.jpg" alt="QR Kod Projesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📑</p>
+          <p>Endulus Afişleri</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-purple-600 font-semibold mt-3 text-center">Tasarladığımız Afişler</p>
+      </div>
+
+
      </div>
+     
+     
+     
+     <!-- 2. Manevi ve Sosyal Gelişim Topluluğu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
-       <div class="text-4xl">
-        🌙
+       <div class="text-5xl">
+            
        </div>
        <div>
-        <h3 class="text-xl font-bold text-gray-800">Manevi Gelişim Topluluğu</h3>
+        <h3 class="text-2xl font-bold text-gray-800">Manevi ve Sosyal Gelişim Topluluğu</h3>
         <p class="text-sm text-blue-600 font-semibold">Başkan: Nisa Beyaz</p>
        </div>
       </div>
-      <p class="text-gray-700 leading-relaxed mb-4"><strong>Amaç:</strong> Öğrencilerin manevi değerlerini güçlendirmek, dini ve ahlaki gelişimlerine katkıda bulunmak.</p>
-      <div class="bg-red-50 p-4 rounded-lg">
+      <p class="text-gray-700 leading-relaxed mb-4">Öğrencilerimizin manevi gelişimini destekleyen, sosyal sorumluluk projelerinde aktif rol alan topluluk.</p>
+      
+      
+      <!-- Filistin Konferansı -->
+       <div class="bg-red-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-red-800 mb-4 flex items-center justify-center gap-2">🤲 Filistin Yardım Etkinliği</h4>
        <p class="text-gray-700 text-center mb-4">Topluluğumuz tarafından düzenlenen yardım kampanyası kapsamında Filistin halkına destek için çeşitli faaliyetler gerçekleştirilmiştir.</p>
        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -235,19 +235,245 @@
        </div>
        <p class="text-xs text-red-600 font-semibold mt-3 text-center">Topluluğumuzun düzenlediği yardım kampanyasından kareler.</p>
       </div>
+
+      <!--ETKİNLİK BİTİŞİ -->
+
+      <!--ETKİNLİK BAŞLANGICI -->
+
+      <div class="bg-purple-50 p-4 rounded-lg">
+       <h4 class="text-xl font-bold text-purple-800 mb-4 flex items-center justify-center gap-2">🎵 Meşk Gecesi</h4>
+       <p class="text-gray-700 text-center mb-4">Manevi Gelişim Topluluğumuz tarafından düzenlenen Meşk Gecesi etkinliğinden özel anlar.</p>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="photo-card p-1"><img src="images/meşk0.jpg" alt="Meşk Gecesi 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎵</p>
+          <p>Meşk Gecesi 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/meşk1.jpg" alt="Meşk Gecesi 2" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎵</p>
+          <p>Meşk Gecesi 2</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-purple-600 font-semibold mt-3 text-center">Manevi müzik ve sohbet dolu anlamlı bir gece.</p>
+      </div>
+
+      <!--ETKİNLİK BİTİŞİ -->
+
+      <!--ETKİNLİK BAŞLANGICI-->
+       <div class="bg-red-50 p-4 rounded-lg mb-4">
+       <h4 class="text-xl font-bold text-red-800 mb-4 flex items-center justify-center gap-2">🤲 Gençlik Merkezi Hocalarımızla Konferansımız </h4>
+       <p class="text-gray-700 text-center mb-4">Manevi Gelişim Topluluğumuz ve Gençlik Merkezinden Gelen Hocalarımızın Katkılarıyla Düzenlediğimiz Konferansımız.</p>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="photo-card p-1"><img src="images/genclik1.jpg" alt="Filistin Hakkındaki Konferansımız 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/genclik2.jpg" alt="Filistin Hakkındaki Konferansımız 2 " class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 2</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/genclik3.jpg" alt="Filistin Hakkındaki Konferansımız 3 " class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 3</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-red-600 font-semibold mt-3 text-center">Gençlik Merkezimizden Gelen Hocalarımızın Filistin Hakkında Konferansı.</p>
+        </div>
+
+       <!--ETKİNLİK BİTİŞİ -->
+
+
+       <!-- etkinlik başlagıcı  -->
+       <div class="bg-red-50 p-4 rounded-lg mb-4">
+       <h4 class="text-xl font-bold text-red-800 mb-4 flex items-center justify-center gap-2">🎁 Miniklere Karne Hediyesi</h4>
+       <p class="text-gray-700 text-center mb-4">Anaokulu öğrencilerine yaptığımız hediyeler </p>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="photo-card p-1"><img src="images/atkı.jpg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/atkı1.jpg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 2</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/atkı2.jpg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 3</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-red-600 font-semibold mt-3 text-center">Topluluğumuzun düzenlediği miniklerle buluşmamızdan kareler.</p>
+      </div>
+
+      <!--ETKİNLİK BİTİŞİ -->
+
+       <!--ETKİNLİK BAŞLANGICI-->
+       <div class="bg-red-50 p-4 rounded-lg mb-4">
+       <h4 class="text-xl font-bold text-red-800 mb-4 flex items-center justify-center gap-2">🤲 Beraat Kandilimiz Mübarek Olsun  </h4>
+       <p class="text-gray-700 text-center mb-4">Manevi Gelişim Topluluğumuz ve Hocalarımızın Önderliğinde Namaz Çıkışı Halkımıza Helva Dağıttık .</p>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="photo-card p-1"><img src="images/helva1.jpg.jpeg" alt="Helva" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/helva2.jpg.jpeg" alt="Helva " class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 2</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/helva3.jpg.jpeg" alt="Helva  " class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 3</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-red-600 font-semibold mt-3 text-center">Namaz Çıkışı Helvamızı Dağıttık.</p>
+        </div>
+        <!-- etkinlik bitişi -->
+
+        <!--ETKİNLİK BAŞLANGICI -->
+       <div class="bg-blue-50 p-4 rounded-lg">
+       <h4 class="text-xl font-bold text-blue-800 mb-4 flex items-center justify-center gap-2"> 🌹Regaib Kandilimiz Mübarek Olsun  </h4>
+       <p class="text-gray-700 text-center mb-4">Öğrencilerimiz Sabah Namazı Sonrasında Cemaatimize Hediyelerini Dağıttı  </p>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="photo-card p-1"><img src="images/gül4.jpeg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 1</p> 
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/gül3.jpeg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/gül2.jpeg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/gül1.jpeg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 2</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-blue-600 font-semibold mt-3 text-center">Kandilimiz Mübarek Olsun  .</p>
+      </div>
+      
+     <!-- etkinlik bitişi --> 
+
+
+
+       <!--ETKİNLİK BAŞLANGICI-->
+       <div class="bg-red-50 p-4 rounded-lg mb-4">
+       <h4 class="text-xl font-bold text-red-800 mb-4 flex items-center justify-center gap-2">🤲 Sabah Namazı Buluşmalarımız  </h4>
+       <p class="text-gray-700 text-center mb-4">Manevi Gelişim Topluluğumuz Önderliğinde Sabah Namazı Buluşmamız </p>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="photo-card p-1"><img src="images/namaz1.jpg" alt="Filistin Hakkındaki Konferansımız 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/namaz2.jpg" alt="Filistin Hakkındaki Konferansımız 2 " class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 2</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/namaz3.jpg" alt="Filistin Hakkındaki Konferansımız 3 " class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 3</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-red-600 font-semibold mt-3 text-center">Sabah Namazı Buluşmalarımız .</p>
+        </div>
+
+
+       <!--ETKİNLİK BİTİŞİ -->
+
+       <!--ETKİNLİK BAŞLANGICI -->
+       <div class="bg-blue-50 p-4 rounded-lg">
+       <h4 class="text-xl font-bold text-blue-800 mb-4 flex items-center justify-center gap-2">Kurs Ziyaretimiz </h4>
+       <p class="text-gray-700 text-center mb-4">Kur'an Kursu ziyaretimizde küçüklere Mehmet Akif Ersoy'u ve Bayrak Tanıtımı Yaptık </p>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="photo-card p-1"><img src="images/ersoy3.jpeg" alt="Pano Çalışması 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/ersoy2.jpeg" alt="Pano Çalışması 2" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 2</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/ersoy1.jpeg" alt="Pano Çalışması 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/ersoy.jpeg" alt="Pano Çalışması 2" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 2</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-blue-600 font-semibold mt-3 text-center">Mehmet Akif Ersoy'u saygıyla anıyoruz</p>
+      </div>
+
+
+
+      <!--ETKİNLİK BİTİŞİ -->
+       
      </div>
+     
+     
+     
+     <!-- 3. Mesleki Gelişim Topluluğu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
-       <div class="text-4xl">
+       <div class="text-5xl">
         💼
        </div>
        <div>
-        <h3 class="text-xl font-bold text-gray-800">Mesleki Gelişim Topluluğu</h3>
+        <h3 class="text-2xl font-bold text-gray-800">Mesleki Gelişim Topluluğu</h3>
         <p class="text-sm text-blue-600 font-semibold">Başkan: Ebrar Nur Gümüş</p>
        </div>
+
+      
+       
       </div>
-      <p class="text-gray-700 leading-relaxed mb-4"><strong>Amaç:</strong> Kariyer planlama, iş hayatına hazırlık ve mesleki yetkinliklerin geliştirilmesi konusunda öğrencilere rehberlik etmek.</p>
-      <div class="bg-green-50 p-4 rounded-lg">
+      <p class="text-gray-700 leading-relaxed">Kariyer planlama, iş dünyası ile tanışma ve mesleki becerilerin geliştirilmesine yönelik etkinlikler düzenleyen topluluk.</p>
+
+      <div class="bg-green-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-green-800 mb-4 flex items-center justify-center gap-2">👩‍🏫 Öğretmenler Günü - Emekli Öğretmen Ziyareti</h4>
        <p class="text-gray-700 text-center mb-4">Öğretmenler Günü kapsamında emekli öğretmenlerimizi ziyaret ederek, vefa ve saygı duygularımızı ifade ettik.</p>
        <div class="flex justify-center">
@@ -260,17 +486,125 @@
        </div>
        <p class="text-xs text-green-600 font-semibold mt-3 text-center">Emekli öğretmenlerimizle anlamlı bir gün geçirdik.</p>
       </div>
+
+
+      <!--ETKİNLİK BİTİŞİ -->
+
+
+      <!--ETKİNLİK BAŞLANGICI -->
+       <div class="bg-blue-50 p-4 rounded-lg">
+       <h4 class="text-xl font-bold text-blue-800 mb-4 flex items-center justify-center gap-2">🎨 Mahmut Celalettin Ökten Pano Çalışması</h4>
+       <p class="text-gray-700 text-center mb-4">Mahmut Celalettin Ökten adına hazırlanan pano çalışmamızdan görüntüler.</p>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="photo-card p-1"><img src="images/pano.jpg" alt="Pano Çalışması 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/pano2.jpg" alt="Pano Çalışması 2" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 2</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-blue-600 font-semibold mt-3 text-center">Öğrencilerimizin yaratıcı çalışmaları.</p>
+      </div>
+
+
+
+      <!--ETKİNLİK BİTİŞİ -->
+
+      <!--ETKİNLİK BAŞLANGICI-->
+       <div class="bg-red-50 p-4 rounded-lg mb-4">
+       <h4 class="text-xl font-bold text-red-800 mb-4 flex items-center justify-center gap-2">🧯AFAD Eğitimimiz   </h4>
+       <p class="text-gray-700 text-center mb-4">Yurdumuzda AFAD tarafınfan gerçekleştirilen eğitimimiz </p>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="photo-card p-1"><img src="images/afad1.jpg" alt="AFAD eğitimi 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/afad2.jpg" alt="AFAD eğitimi 2 " class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 2</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/afad3.jpg" alt="AFAD eğitimi 3 " class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 3</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-red-600 font-semibold mt-3 text-center">AFAD Eğitiminden Kareler  .</p>
+        </div>
+
+
+       <!--ETKİNLİK BİTİŞİ -->
+
+       <!--ETKİNLİK BAŞLANGICI-->
+       <div class="bg-red-50 p-4 rounded-lg mb-4">
+       <h4 class="text-xl font-bold text-red-800 mb-4 flex items-center justify-center gap-2">👨‍🏫👩‍🏫 Saygıdeğer Öğretmenlerimiz </h4>
+       <p class="text-gray-700 text-center mb-4">Şehit Olan Saygıdeğer Hocalarımız  </p>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="photo-card p-1"><img src="images/ogretmen1.jpg" alt="Şehit Öğretmenimiz" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/ogretmen4.jpg" alt="Şehit Öğretmenimiz " class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 2</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/ogretmen5.jpg" alt="Şehit Öğretmenimiz " class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 2</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/ogretmen3.jpg" alt="Şehit Öğretmenimiz " class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 2</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/ogretmen2.jpg" alt="Şehit Öğretmenimiz " class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">📷</p>
+          <p>Resim 3</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-red-600 font-semibold mt-3 text-center">Öğretmen Geleceği Kalbi İle Yazandır.</p>
+        </div>
+
+
+       <!--ETKİNLİK BİTİŞİ -->
      </div>
+     <!--mesleki gelişim topluluğu bitişi -->
+     
+     
+     
+     <!-- 4. Sağlıklı Yaşam Topluluğu (CİMA) -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
-       <div class="text-4xl">
-        🏃‍♀️
+       <div class="text-5xl">
+         🏃‍♀️
        </div>
        <div>
-        <h3 class="text-xl font-bold text-gray-800">Sağlıklı Yaşam Topluluğu</h3>
+        <h3 class="text-2xl font-bold text-gray-800">Sağlıklı Yaşam Topluluğu (CİMA)</h3>
         <p class="text-sm text-blue-600 font-semibold">Başkan: Emine Kaya</p>
        </div>
       </div>
+       <!--ETKİNLİK BAŞLANGICI -->
+
       <p class="text-gray-700 leading-relaxed mb-4"><strong>Amaç:</strong> Fiziksel ve mental sağlığın önemini vurgulamak, sağlıklı yaşam alışkanlıkları kazandırmak ve spor aktiviteleri düzenlemek.</p>
       <div class="bg-teal-50 p-4 rounded-lg">
        <h4 class="text-xl font-bold text-teal-800 mb-4 flex items-center justify-center gap-2">🩺 Diyabet Günü Menüsü</h4>
@@ -289,6 +623,11 @@
          </div>
         </div>
        </div>
+
+       <!--ETKİNLİK BİTİŞİ -->
+
+       <!--ETKİNLİK BAŞLANGICI -->
+
        <p class="text-xs text-teal-600 font-semibold mt-3 text-center">Sağlıklı beslenme farkındalığı için özel menü.</p>
       </div>
       <hr class="my-6 border-gray-200">
@@ -317,43 +656,156 @@
        </div>
        <p class="text-xs text-green-600 font-semibold mt-3 text-center">Geleceğe nefes oluyoruz.</p>
       </div>
+
+      <!--ETKİNLİK BİTİŞİ -->
      </div>
+     
+     
+     
+     
+     
+     <!-- 5. Kültür ve Sanat Topluluğu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
-       <div class="text-4xl">
-        🎨
+       <div class="text-5xl">
+        🎭
        </div>
        <div>
-        <h3 class="text-xl font-bold text-gray-800">Kültür ve Sanat Topluluğu</h3>
-        <p class="text-sm text-blue-600 font-semibold">Başkan: Hayrunnisa Çavdar</p>
+        <h3 class="text-2xl font-bold text-gray-800">Kültür ve Sanat Topluluğu</h3>
+        <p class="text-sm text-blue-600 font-semibold">Başkan: Hayrünnisa Çavdar</p>
        </div>
       </div>
-      <p class="text-gray-700 leading-relaxed mb-4"><strong>Amaç:</strong> Sanatsal ve kültürel faaliyetlerle öğrencilerin estetik algılarını geliştirmek, yeteneklerini keşfetmelerine yardımcı olmak.</p>
-      <div class="bg-amber-50 p-4 rounded-lg">
-       <h4 class="text-xl font-bold text-amber-800 mb-4 flex items-center justify-center gap-2">☕ Kahve Günü Etkinliği</h4>
-       <p class="text-gray-700 text-center mb-4">Kültür ve Sanat Topluluğu tarafından düzenlenen kahve günü etkinliğimizden görüntüler. Öğrencilerimiz bir araya gelerek keyifli sohbetler eşliğinde kahve kültürünü keşfetti.</p>
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <p class="text-gray-700 leading-relaxed mb-4">Kültürel etkinlikler ve sanatsal faaliyetler düzenleyen, yaratıcılığı teşvik eden topluluk.</p><!-- Kahve Günü Etkinliği -->
+      <div class="bg-amber-50 p-4 rounded-lg mb-4">
+       <h4 class="text-xl font-bold text-amber-800 mb-3 flex items-center justify-center gap-2">☕ Kahve Günü Etkinliği</h4>
+       <p class="text-gray-700 text-center mb-4">Geleneksel Türk kahvesi kültürünü tanıtma ve keyifli sohbet anları</p>
+       <div class="grid grid-cols-2 gap-2 mb-4">
         <div class="photo-card p-1"><img src="images/kahve.jpg" alt="Kahve Günü 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
          <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
           <p class="text-4xl mb-2">☕</p>
           <p>Kahve Günü 1</p>
          </div>
         </div>
-        <div class="photo-card p-1"><img src="images/kahve2.jpg" alt="Kahve Günü 2" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="photo-card p-1"><img src="images/kahve2.jpg" alt="Kahve G  nü 2" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
          <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
           <p class="text-4xl mb-2">☕</p>
           <p>Kahve Günü 2</p>
          </div>
         </div>
        </div>
-       <p class="text-xs text-amber-600 font-semibold mt-3 text-center">Kahve kültürü ve keyifli sohbetler.</p>
+       <p class="text-xs text-amber-600 font-semibold mt-3 text-center">Kahve kültürü ve dostluk buluşması</p>
       </div>
+      <!-- etkinlik bitişi -->
+
+       <!--ETKİNLİK BAŞLANGICI -->
+       <div class="bg-blue-50 p-4 rounded-lg">
+       <h4 class="text-xl font-bold text-blue-800 mb-4 flex items-center justify-center gap-2">✨Tokat Gezimiz </h4>
+       <p class="text-gray-700 text-center mb-4">Gerçekleştirdiğimiz Tokat Gezisinden Kareler </p>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="photo-card p-1"><img src="images/Tokat.jpg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/Tokat3.jpg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/Tokat2.jpg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/Tokat1.jpg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🎨</p>
+          <p>Pano 2</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-blue-600 font-semibold mt-3 text-center">Tokat Hatıralarımız .</p>
+      </div>
+      
+     <!-- etkinlik bitişi --> 
+     
+
+       <!--ETKİNLİK BAŞLANGICI -->
+
+       
+
+     
+      
+      <div class="bg-green-50 p-4 rounded-lg">
+       <h4 class="text-xl font-bold text-green-800 mb-4 flex items-center justify-center gap-2">Endulus Olmasaydı Avrupa Nasıl Olurdu?</h4>
+       <p class="text-gray-700 text-center mb-4">İlahiyat Fakültesi Dr. Öğretim Üyesi Osman Cürük Hocamızın Konferansı .</p>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="photo-card p-1"><img src="images/Endulus5.jpg.jpeg" alt="Ağaç Dikme 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2"></p>
+          <p>Ağaç Dikme 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/Endulus3.jpg.jpeg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2"></p>
+          <p>Ağaç Dikme 2</p>
+         </div>
+        </div>
+      
+       <div class="photo-card p-1"><img src="images/Endulus4.jpg.jpeg" alt="" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2"></p>
+          <p>Ağaç Dikme 2</p>
+         </div>
+        </div>
+        </div>
+       <p class="text-xs text-green-600 font-semibold mt-3 text-center">Konferansımızdan Kareler .</p>
+      </div>
+      
+      
+      <!-- Yerli Malı Haftası -->
+      <div class="bg-red-50 p-4 rounded-lg">
+       <h4 class="text-xl font-bold text-red-800 mb-3 flex items-center justify-center gap-2">  🇷 Yerli Malı Haftası</h4>
+       <p class="text-gray-700 text-center mb-4">Milli ekonomiye destek ve yerli ürün farkındalığı</p>
+       <div class="grid grid-cols-2 gap-2 mb-4">
+        <div class="photo-card p-1"><img src="images/yerli1.jpg" alt="Yerli Malı Haftası 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🇹🇷</p>
+          <p>Yerli Malı Haftası 1</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/yerli2.jpg" alt="Yerli Malı Haftası 2" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🇹🇷</p>
+          <p>Yerli Malı Haftası 2</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/yerli3.jpg" alt="Yerli Malı Haftası 3" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🇹🇷</p>
+          <p>Yerli Malı Haftası 3</p>
+         </div>
+        </div>
+        <div class="photo-card p-1"><img src="images/yerli4.jpg" alt="Yerli Malı Haftası 4" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+         <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+          <p class="text-4xl mb-2">🇹🇷</p>
+          <p>Yerli Malı Haftası 4</p>
+         </div>
+        </div>
+       </div>
+       <p class="text-xs text-red-600 font-semibold mt-3 text-center">Yerli Malı Haftamız</p>
+      </div>
+     </div>
      </div>
     </div>
    </div><!-- Atölyeler Sayfası -->
-   <div id="atolyeler-page" class="hidden max-w-7xl mx-auto px-6 py-8"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
+   <div id="atolyeler-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Atölyeler</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
      <div class="content-card p-6 rounded-lg shadow-lg text-center">
       <div class="text-5xl mb-4">
        🥁
@@ -388,23 +840,70 @@
        <p class="text-sm text-blue-600 font-semibold mt-2 text-center">Video: İyilik Kedi</p>
       </div>
      </div>
-     <div class="content-card p-6 rounded-lg shadow-lg text-center">
-      <div class="text-5xl mb-4">
-       🖌️
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="text-center mb-4">
+       <div class="text-5xl mb-4">
+        🖌️
+       </div>
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Sanat Atölyesi</h3>
+       <p class="text-gray-700 mb-4">Resim, el sanatları ve yaratıcı çalışmalar ile sanata dair keşifler yapılır.</p>
       </div>
-      <h3 class="text-xl font-bold text-gray-800 mb-3">Sanat Atölyesi</h3>
-      <p class="text-gray-700">Resim, el sanatları ve yaratıcı çalışmalar ile sanata dair keşifler yapılır.</p>
+      <div class="grid grid-cols-3 gap-2">
+       <div class="photo-card"><img src="images/atolye1.jpg" alt="Sanat Atölyesi 1" class="w-full h-40 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+         <p class="text-3xl mb-2">   </p>
+         <p class="text-xs">Sanat 1</p>
+        </div>
+       </div>
+       <div class="photo-card"><img src="images/atolye2.jpg" alt="Sanat Atölyesi 2" class="w-full h-40 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+         <p class="text-3xl mb-2">🎨</p>
+         <p class="text-xs">Sanat 2</p>
+        </div>
+       </div>
+       <div class="photo-card"><img src="images/atolye3.jpg" alt="Sanat Atölyesi 3" class="w-full h-40 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+         <p class="text-3xl mb-2">🎨</p>
+         <p class="text-xs">Sanat 3</p>
+        </div>
+       </div>
+      </div>
      </div>
-     <div class="content-card p-6 rounded-lg shadow-lg text-center">
-      <div class="text-5xl mb-4">
-       📚
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="text-center mb-4">
+       <div class="text-5xl mb-4">
+        📚
+       </div>
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Kitap Okuma Atölyesi</h3>
+       <p class="text-gray-700 mb-4">Düzenli kitap okuma, tartışma ve edebiyat sohbetleri gerçekleştirilir.</p>
+      </div><!-- Kitap okuma atölyesi resimleri 3 sütun halinde -->
+      <div class="grid grid-cols-3 gap-2"><!-- Kitap Okuma Atölyesi Resim 1 - images/kitap1.jpg -->
+       <div class="photo-card"><img src="images/kitap1.jpg" alt="Kitap Atölyesi 1" class="w-full h-40 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"> <!-- Resim yüklenemezse gösterilecek yedek içerik -->
+        <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+         <p class="text-3xl mb-2">📖</p>
+         <p class="text-xs">Kitap 1</p>
+        </div>
+       </div><!-- Kitap Okuma Atölyesi Resim 2 - images/kitap2.jpg -->
+       <div class="photo-card"><img src="images/kitap2.jpg" alt="Kitap Atölyesi 2" class="w-full h-40 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"> <!-- Resim yüklenemezse gösterilecek yedek içerik -->
+        <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+         <p class="text-3xl mb-2">📖</p>
+         <p class="text-xs">Kitap 2</p>
+        </div>
+       </div><!-- Kitap Okuma Atölyesi Resim 3 - images/kitap3.jpg -->
+       <div class="photo-card"><img src="images/kitap3.jpg" alt="Kitap Atölyesi 3" class="w-full h-40 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"> <!-- Resim yüklenemezse gösterilecek yedek içerik -->
+        <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
+         <p class="text-3xl mb-2">📖</p>
+         <p class="text-xs">Kitap 3</p>
+        </div>
+       </div>
       </div>
-      <h3 class="text-xl font-bold text-gray-800 mb-3">Kitap Okuma Atölyesi</h3>
-      <p class="text-gray-700">Düzenli kitap okuma, tartışma ve edebiyat sohbetleri gerçekleştirilir.</p>
      </div>
     </div>
-   </div><!-- Etkinlikler Sayfası -->
-   <div id="etkinlikler-page" class="hidden max-w-7xl mx-auto px-6 py-8"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
+   </div>
+   
+   
+   <!-- Etkinlikler Sayfası -->
+   <div id="etkinlikler-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Etkinlikler</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
      <div class="content-card p-6 rounded-lg shadow-lg">
@@ -446,13 +945,17 @@
         <li>Çevre ve Sürdürülebilirlik</li>
        </ul>
       </div>
-      <div class="mt-4 text-center"><span class="text-blue-600 font-semibold">→ Münazara Fotoğraflarını Görüntüle</span>
+      <div class="mt-4 text-center"><span class="text-blue-600 font-semibold">👉 Münazara Fotoğraflarını Görüntüle</span>
       </div>
      </div>
     </div>
-   </div><!-- Münazara Fotoğrafları Sayfası -->
-   <div id="munazara-page" class="hidden max-w-7xl mx-auto px-6 py-8"><button onclick="showPage('etkinlikler')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Etkinliklere Dön </button>
-    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">⚖️ Münazara Fotoğrafları</h2>
+   </div>
+
+      
+   
+   <!-- Münazara Fotoğrafları Sayfası -->
+   <div id="munazara-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('etkinlikler')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Etkinliklere Dön </button>
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">⚖️ Yapay Zeka Hayatımızı Kolaylaştırır mı Zorlaştırır mı </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
      <div class="photo-card"><img src="images/resim1.jpg" alt="Münazara 1" class="w-full h-80 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
       <div style="display: none;" class="text-center py-8 text-gray-500 bg-gray-100 rounded">
@@ -478,9 +981,325 @@
        <p>Resim 4</p>
       </div>
      </div>
+     <!-- münazara 2 -->
+      
+
+
+    </div>
+   </div>
+   
+   
+
+  
+   
+   
+   <!-- Videolar Sayfası -->
+   <div id="videolar-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎬 Videolar</h2>
+    <div class="space-y-6"><!-- Kahve Günü Videosu -->
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="flex items-center gap-4 mb-4">
+       <div class="text-5xl">
+        ☕
+       </div>
+       <h3 class="text-2xl font-bold text-gray-800">Kahve Günü Etkinliği</h3>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-4">Kültür ve Sanat Topluluğu tarafından düzenlenen kahve günü etkinliğimizden özel anlar.</p>
+      <div class="bg-amber-50 p-4 rounded-lg">
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/kahve.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       </video>
+       <div style="display: none;" class="text-center py-12 text-gray-500">
+        <p class="text-6xl mb-2">☕</p>
+        <p>Kahve Günü Videosu</p>
+       </div>
+       <p class="text-xs text-amber-600 font-semibold mt-3 text-center">Kahve kültürü ve keyifli sohbet anları</p>
+      </div>
+     </div>
+     
+     <!-- İyilik Kedi Videosu -->
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="flex items-center gap-4 mb-4">
+       <div class="text-5xl">
+        🐾
+       </div>
+       <h3 class="text-2xl font-bold text-gray-800">Hayvan Besleme Etkinliği</h3>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-4">İyilik Atölyesi tarafından düzenlenen sokak hayvanları besleme faaliyetimizden görüntüler.</p>
+      <div class="bg-blue-50 p-4 rounded-lg">
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/iyilikkedi.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       </video>
+       <div style="display: none;" class="text-center py-12 text-gray-500">
+        <p class="text-6xl mb-2">🐱</p>
+        <p>İyilik Kedi Videosu</p>
+       </div>
+       <p class="text-xs text-blue-600 font-semibold mt-3 text-center">Sokak dostlarımıza gösterdiğimiz sevgi ve ilgi</p>
+      </div>
+     </div>
+     <!-- yerli malı haftası videosu -->
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="flex items-center gap-4 mb-4">
+       <div class="text-5xl">
+        🇹🇷
+       </div>
+       <h3 class="text-2xl font-bold text-gray-800">Yerli Malı Haftası Etkinliği</h3>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-4">Yerli Malı Haftasının gelmesi ile birlikte yurdumuzda gerçekleştirdiğimiz yerli malı haftasına ait videomuz .</p>
+      <div class="bg-blue-50 p-4 rounded-lg">
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/yerlimalı.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       </video>
+       <div style="display: none;" class="text-center py-12 text-gray-500">
+        <p class="text-6xl mb-2"></p>
+        <p>İyilik Kedi Videosu</p>
+       </div>
+       <p class="text-xs text-blue-600 font-semibold mt-3 text-center">Yerli Malı Haftası Etkinliğimizden Videomuz </p>
+      </div>
+     </div>
+     
+     <!-- Gençlik Merkezi Filistin Konferansı -->
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="flex items-center gap-4 mb-4">
+       <div class="text-5xl">
+        🇵🇸
+       </div>
+       <h3 class="text-2xl font-bold text-gray-800">Gençlik Merkezi Filistin Konferansı</h3>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-4">Manevi ve Sosyal Gelişim Topluluğu tarafından düzenlenen Filistin konferansı.</p>
+      <div class="bg-green-50 p-4 rounded-lg">
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/gençlik.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       </video>
+       <div style="display: none;" class="text-center py-12 text-gray-500">
+        <p class="text-6xl mb-2">🇵🇸</p>
+        <p>Filistin Konferansı Videosu</p>
+       </div>
+       <p class="text-xs text-green-600 font-semibold mt-3 text-center">Gençlik Merkezi işbirliği ile gerçekleştirildi</p>
+      </div>
+      
+      
+      </div>
+      
+      
+      <!-- Şehit Öğretmenler Anma Videosu -->
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="flex items-center gap-4 mb-4">
+       <div class="text-5xl">
+        🕊️
+       </div>
+       <h3 class="text-2xl font-bold text-gray-800">Şehit Öğretmenler Anma Programı</h3>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-4">Şehit öğretmenlerimizi anma ve onlara saygı duruşu programımız.</p>
+      <div class="bg-red-50 p-4 rounded-lg"><!-- Video: images/ogretmen.mp4 -->
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/ogretmen.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       </video><!-- Video yüklenemezse gösterilecek yedek içerik -->
+       <div style="display: none;" class="text-center py-12 text-gray-500">
+        <p class="text-6xl mb-2">🕊️</p>
+        <p>Şehit Öğretmenler Videosu</p>
+       </div>
+       <p class="text-xs text-red-600 font-semibold mt-3 text-center">Şehitlerimizi minnetle anıyoruz</p>
+      </div>
+     </div>
+
+
+     <!-- sanat atölyesi videosu -->
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="flex items-center gap-4 mb-4">
+       <div class="text-5xl">
+        🖌️
+       </div>
+       <h3 class="text-2xl font-bold text-gray-800"> Sanat Atolyesi Etkinliğimiz  </h3>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-4">Sanat Atolyesi ile Birlikte Gerçekleştirdiğimiz Vision Board Çalışması  .</p>
+      <div class="bg-red-50 p-4 rounded-lg"><!-- Video: images/sanat.mp4 -->
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/sanat.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       </video><!-- Video yüklenemezse gösterilecek yedek içerik -->
+       <div style="display: none;" class="text-center py-12 text-gray-500">
+        <p class="text-6xl mb-2">🕊️</p>
+        <p>Şehit Öğretmenler Videosu</p>
+       </div>
+       <p class="text-xs text-red-600 font-semibold mt-3 text-center"> Sanat Atolyesi Çalışmalarımız </p>
+      </div>
+     </div>
+
+          <!-- Razaman Vision Board  -->
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="flex items-center gap-4 mb-4">
+       <div class="text-5xl">
+        🫓
+       </div>
+       <h3 class="text-2xl font-bold text-gray-800">Ramazan Vision Board </h3>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-4">Ramazan'ın Gelmesi İle Ramazanda Gerçekleştirmek istediğimiz etkinliklerle Vision Board Çalışmamız </p>
+      <div class="bg-green-50 p-4 rounded-lg">
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/ramazan.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       </video>
+       <div style="display: none;" class="text-center py-12 text-gray-500">
+        <p class="text-6xl mb-2">🇵🇸</p>
+        <p>Ramazan Vision Board Videosu</p>
+       </div>
+       <p class="text-xs text-green-600 font-semibold mt-3 text-center">Ramazan Gelmiş Hoşgelmiş...</p>
+      </div>
+      
+      
+      </div>
+     
+     
+     
+     <!-- AFAD Afet Eğitimi Videosu -->
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <div class="flex items-center gap-4 mb-4">
+       <div class="text-5xl">
+        🚨
+       </div>
+       <h3 class="text-2xl font-bold text-gray-800">AFAD Afet Eğitimi</h3>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-4">AFAD tarafından verilen afet bilinçlendirme ve hazırlık eğitimimiz.</p>
+      <div class="bg-orange-50 p-4 rounded-lg"><!-- Video: images/afad.mp4 -->
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/afad.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       </video><!-- Video yüklenemezse gösterilecek yedek içerik -->
+       <div style="display: none;" class="text-center py-12 text-gray-500">
+        <p class="text-6xl mb-2">🚨</p>
+        <p>AFAD Eğitimi Videosu</p>
+       </div>
+       <p class="text-xs text-orange-600 font-semibold mt-3 text-center">Afetlere hazırlıklı olma eğitimi</p>
+      </div>
+     </div>
+    </div>
+   </div>
+   
+   
+   
+   <!-- Hakkımızda Sayfası -->
+   <div id="hakkimizda-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Hakkımızda</h2>
+    <div class="space-y-6">
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <p class="text-gray-700 leading-relaxed mb-4">TDV Samsun Atakum Yükseköğretim Kız Öğrenci Yurdu, Samsun'da öğrenim gören kız öğrencilere hizmet vermektedir. Modern tesisleri, güvenli ortamı ve eğitim odaklı yaklaşımı ile öğrencilerimize sadece barınma değil, aynı zamanda gelişim ve öğrenme imkanı sunmaktadır.</p>
+      <div class="bg-gray-50 p-4 rounded-lg">
+       <p class="text-sm text-gray-800 font-semibold mb-2">📍 İletişim Bilgileri:</p>
+       <p class="text-sm text-gray-700">📧 E-posta: samsun.kizyurdu@tdvyurt.com.tr</p>
+       <p class="text-sm text-gray-700">📞 Telefon: (0549) 839 69 54</p>
+       <p class="text-sm text-gray-700">🌐 Web: https://www.tdvyurt.com.tr/</p>
+       <p class="text-sm text-gray-700">📍 Adres: Yenimahalle Mahallesi 3383. Sokak No:6 Atakum/SAMSUN</p>
+      </div>
+     </div>
+     <div class="content-card p-6 rounded-lg shadow-lg">
+      <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3"><span class="text-4xl">✨</span> Sunduğumuz İmkanlar</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+       <div class="flex items-start gap-2"><span class="text-xl">✅</span>
+        <p class="text-gray-700">Konforlu ve güvenli konaklama</p>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-xl">✅</span>
+        <p class="text-gray-700">Dengeli ve düzenli beslenme</p>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-xl">✅</span>
+        <p class="text-gray-700">Topluluk ve atölye faaliyetleri</p>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-xl">✅</span>
+        <p class="text-gray-700">Kütüphane ve çalışma alanları</p>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-xl">✅</span>
+        <p class="text-gray-700">Rehberlik ve danışmanlık hizmetleri</p>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-xl">✅</span>
+        <p class="text-gray-700">Sosyal ve kültürel etkinlikler</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!-- Duyurular Sayfası -->
+   <div id="duyurular-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">📢 Duyurular</h2>
+    <div class="space-y-6">
+     <div class="content-card p-6 rounded-lg shadow-lg border-l-4 border-blue-500">
+      <div class="flex items-start gap-4">
+       <div class="text-4xl">
+        📌
+       </div>
+       <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Genel Duyuru</h3>
+        <p class="text-gray-700 leading-relaxed mb-2">Yurdumuzun güncel duyuruları bu bölümde paylaşılacaktır. Etkinlikler, önemli tarihler ve bilgilendirmeler için bu sayfayı düzenli olarak takip ediniz.</p>
+        <p class="text-sm text-gray-500 mt-2">📅 Tarih: Güncel</p>
+       </div>
+      </div>
+     </div>
+     <div class="content-card p-6 rounded-lg shadow-lg border-l-4 border-green-500">
+      <div class="flex items-start gap-4">
+       <div class="text-4xl">
+        🎉
+       </div>
+       <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Etkinlik Duyuruları</h3>
+        <p class="text-gray-700 leading-relaxed mb-2">Yaklaşan etkinlikler, topluluk faaliyetleri ve atölye programları hakkında bilgilendirmeler burada yer alacaktır.</p>
+        <p class="text-sm text-gray-500 mt-2">📅 Detaylar için yöneticinize danışınız</p>
+       </div>
+      </div>
+     </div>
+     <div class="content-card p-6 rounded-lg shadow-lg border-l-4 border-yellow-500">
+      <div class="flex items-start gap-4">
+       <div class="text-4xl">
+        ⚠️
+       </div>
+       <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Önemli Hatırlatmalar</h3>
+        <p class="text-gray-700 leading-relaxed mb-2">Yurt kuralları, temizlik programları ve diğer önemli hatırlatmalar için bu bölümü kontrol ediniz.</p>
+        <p class="text-sm text-gray-500 mt-2">📅 Lütfen düzenli takip ediniz</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!-- En Temiz Oda Sayfası -->
+   <div id="en-temiz-oda-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🏆 Haftanın En Temiz Odası</h2>
+    <div class="content-card p-8 rounded-lg shadow-lg">
+     <div class="text-center mb-6">
+      <div class="text-6xl mb-4">
+       ✨
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Bu Haftanın Kazananı</h3>
+     </div>
+     <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-lg border-2 border-yellow-300">
+      <div class="max-w-2xl mx-auto text-center">
+       <p class="text-4xl font-bold text-amber-600 mb-4">Oda: ---</p>
+       <p class="text-lg text-gray-700 mb-6">Temizlik ve düzene verdiğiniz önem için tebrikler! 🎉</p>
+       <div class="bg-white p-6 rounded-lg shadow-md">
+        <p class="text-gray-600 mb-4"><strong>🌟 Ödül:</strong> Özel hediye ve sertifika</p>
+        <p class="text-sm text-gray-500 italic">Her hafta en temiz ve düzenli odalar değerlendirilerek ödüllendirilmektedir.</p>
+       </div>
+      </div>
+     </div>
+     <div class="mt-8 text-center">
+      <p class="text-gray-600 text-sm">💡 <strong>Not:</strong> Yarışmaya katılmak için odanızı her zaman temiz ve düzenli tutunuz!</p>
+     </div>
+    </div>
+   </div><!-- Şiir Köşesi Sayfası -->
+   <div id="siir-kosesi-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">📝 Şiir Köşesi</h2>
+    <div class="content-card p-8 rounded-lg shadow-lg">
+     <div class="text-center mb-6">
+      <div class="text-6xl mb-4">
+       ✨
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Haftanın Şiiri</h3>
+     </div>
+     <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-lg border-2 border-purple-200">
+      <div class="max-w-2xl mx-auto">
+       <div class="text-center mb-6">
+        <p class="text-lg italic text-gray-700 leading-relaxed">"Yürü ey ezel, giden yolcular gibi<br>
+          Bilmediğin uzun yollardan geç<br>
+          Düşün, yorgun olma ve ölmeden önce<br>
+          Sana verilmiş zamanı değerlendir"</p>
+        <p class="text-sm text-gray-600 mt-6 font-semibold">— Anonim</p>
+       </div>
+       <div class="text-center mt-8">
+        <p class="text-sm text-purple-700 italic">Her hafta yeni bir şiir ile buluşacağız 📚</p>
+       </div>
+      </div>
+     </div>
+     <div class="mt-6 text-center">
+      <p class="text-gray-600 text-sm">Şiir önerilerinizi yurt yönetimine iletebilirsiniz 💌</p>
+     </div>
     </div>
    </div><!-- Amacımız Sayfası -->
-   <div id="amacimiz-page" class="hidden max-w-7xl mx-auto px-6 py-8"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
+   <div id="amacimiz-page" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Amacımız</h2>
     <div class="space-y-6">
      <div class="content-card p-6 rounded-lg shadow-lg">
@@ -499,7 +1318,7 @@
        </div>
        <h3 class="text-2xl font-bold text-gray-800">Vizyonumuz</h3>
       </div>
-      <p class="text-gray-700 leading-relaxed">Türkiye'nin dört bir yanından gelen öğrencilerimizi bir arada buluşturarak, dayanışma, payla    ım ve kardeşlik duygularını pekiştiren, geleceğin lider kadınlarını yetiştiren bir merkez olmayı amaçlıyoruz. Yeryüzünde iyiliğin egemen olması için çalışan, bilinçli, üretken ve topluma faydalı bireyler yetiştirmek vizyonumuzdur.</p>
+      <p class="text-gray-700 leading-relaxed">Türkiye'nin dört bir yanından gelen öğrencilerimizi bir arada buluşturarak, dayanışma, paylaşım ve kardeşlik duygularını pekiştiren, geleceğin lider kadınlarını yetiştiren bir merkez olmayı amaçlıyoruz. Yeryüzünde iyiliğin egemen olması için çalışan, bilinçli, üretken ve topluma faydalı bireyler yetiştirmek vizyonumuzdur.</p>
      </div>
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
@@ -524,174 +1343,119 @@
       </div>
      </div>
     </div>
-   </div><!-- Hakkımızda Sayfası -->
-   <div id="hakkimizda-page" class="hidden max-w-7xl mx-auto px-6 py-8"><button onclick="showPage('menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
-    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Hakkımızda</h2>
-    <div class="space-y-6">
-     <div class="content-card p-6 rounded-lg shadow-lg">
-      <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3"><span class="text-4xl">🏢</span> Türkiye Diyanet Vakfı</h3>
-      <p class="text-gray-700 leading-relaxed mb-4">Türkiye Diyanet Vakfı, 1975 yılında kurulmuş olup, eğitim ve sosyal yardım alanlarında faaliyet gösteren köklü bir vakıftır. Yurt içi ve yurt dışında birçok eğitim kurumu işletmekte, burslar sa  lamakta ve sosyal sorumluluk projelerine öncülük etmektedir.</p>
-     </div>
-     <div class="content-card p-6 rounded-lg shadow-lg">
-      <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3"><span class="text-4xl">🏠</span> Yurdumuz</h3>
-      <p class="text-gray-700 leading-relaxed mb-4">TDV Samsun Atakum Yükseköğretim Kız Öğrenci Yurdu, Samsun'da öğrenim gören kız öğrencilere hizmet vermektedir. Modern tesisleri, güvenli ortamı ve eğitim odaklı yaklaşımı ile öğrencilerimize sadece barınma değil, aynı zamanda gelişim ve öğrenme imkanı sunmaktadır.</p>
-      <div class="bg-gray-50 p-4 rounded-lg">
-       <p class="text-sm text-gray-800 font-semibold mb-2">📍 İletişim Bilgileri:</p>
-       <p class="text-sm text-gray-700">📧 E-posta: samsun.kizyurdu@tdvyurt.com.tr</p>
-       <p class="text-sm text-gray-700">📞 Telefon: (0549) 839 69 54</p>
-       <p class="text-sm text-gray-700">🌐 Web: https://www.tdvyurt.com.tr/</p>
-       <p class="text-sm text-gray-700">📍 Adres: Yenimahalle Mahallesi 3383. Sokak No:6 Atakum/SAMSUN</p>
-      </div>
-     </div>
-     <div class="content-card p-6 rounded-lg shadow-lg">
-      <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3"><span class="text-4xl">🎓</span> Sunduğumuz İmkanlar</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-       <div class="flex items-start gap-2"><span class="text-xl">✅</span>
-        <p class="text-gray-700">Konforlu ve güvenli konaklama</p>
-       </div>
-       <div class="flex items-start gap-2"><span class="text-xl">   </span>
-        <p class="text-gray-700">Dengeli ve düzenli beslenme</p>
-       </div>
-       <div class="flex items-start gap-2"><span class="text-xl">✅</span>
-        <p class="text-gray-700">Topluluk ve atölye faaliyetleri</p>
-       </div>
-       <div class="flex items-start gap-2"><span class="text-xl">✅</span>
-        <p class="text-gray-700">Kütüphane ve çalışma alanları</p>
-       </div>
-       <div class="flex items-start gap-2"><span class="text-xl">✅</span>
-        <p class="text-gray-700">Rehberlik ve danışmanlık hizmetleri</p>
-       </div>
-       <div class="flex items-start gap-2"><span class="text-xl">✅</span>
-        <p class="text-gray-700">Sosyal ve kültürel etkinlikler</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div><!-- Kahve Günü Sayfası -->
-   <div id="kahve-gunu-page" class="hidden max-w-7xl mx-auto px-6 py-8"><button onclick="showPage('topluluklar')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>   </span> Topluluklara Dön </button>
-    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">    Kahve Günü Etkinliği</h2>
-    <div class="content-card p-6 rounded-lg shadow-lg">
-     <p class="text-gray-700 text-center text-lg mb-6">Kültür ve Sanat Topluluğu tarafından düzenlenen kahve günü etkinliğimizden görüntüler. Öğrencilerimiz bir araya gelerek keyifli sohbetler eşliğinde kahve kültürünü keşfetti.</p>
-     <div class="mb-4">
-      <video controls class="w-full rounded shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/kahve.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
-      </video>
-      <div style="display: none;" class="text-center text-8xl py-12">
-       ☕
-      </div>
-     </div>
-     <p class="text-xs text-amber-600 font-semibold text-center mt-3">Video: Kahve Günü Etkinliği</p>
-    </div>
    </div><!-- Footer -->
    <footer class="header-gradient text-white py-6 mt-12">
     <div class="max-w-7xl mx-auto px-6 text-center">
      <p class="text-lg opacity-90">🌟 Birlikte Büyüyoruz, Birlikte Gelişiyoruz 🌟</p>
-     <p class="mt-3 text-sm opacity-75">© 2024 TDV Samsun Atakum Yükseköğretim Kız Öğrenci Yurdu</p>
+     <p class="mt-3 text-sm opacity-75">© 2025 TDV Samsun Atakum Yükseköğretim Kız Öğrenci Yurdu</p>
     </div>
    </footer>
   </div>
   <script>
+    // Varsayılan yapılandırma ayarları - renk ve metin değerleri
     const defaultConfig = {
-      main_institution: "Türkiye Diyanet Vakfı",
-      main_title: "TDV Samsun Atakum Yükseköğretim Kız Öğrenci Yurdu",
-      motto: "Yeryüzünde iyilik egemen oluncaya dek",
-      primary_color: "#1e3a8a",
-      secondary_color: "#2563eb",
-      background_color: "#f5f5f5",
-      text_color: "#1f2937",
-      card_color: "#ffffff"
+      main_institution: "Türkiye Diyanet Vakfı", // Ana kurum adı
+      main_title: "Samsun Atakum Yükseköğretim Kız Öğrenci Yurdu", // Yurt başlığı
+      motto: "Yeryüzünde iyilik egemen oluncaya dek", // Motto metni
+      primary_color: "#1e3a8a", // Ana renk - koyu mavi
+      secondary_color: "#2563eb", // İkincil renk - açık mavi
+      background_color: "#f5f5f5", // Arka plan rengi - açık gri
+      text_color: "#1f2937", // Metin rengi - koyu gri
+      card_color: "#ffffff" // Kart arka plan rengi - beyaz
     };
 
+    // Sayfa geçişlerini yöneten fonksiyon
+    // Parametreler: pageName - gösterilecek sayfanın adı
     function showPage(pageName) {
-      const pages = ['main-menu', 'topluluklar-page', 'atolyeler-page', 'etkinlikler-page', 'munazara-page', 'amacimiz-page', 'hakkimizda-page', 'kahve-gunu-page'];
+      // Tüm sayfa ID'lerinin listesi
+      const pages = ['main-menu', 'topluluklar-page', 'atolyeler-page', 'etkinlikler-page', 'munazara-page', 'amacimiz-page', 'hakkimizda-page', 'videolar-page', 'duyurular-page', 'siir-kosesi-page', 'en-temiz-oda-page'];
       
+      // Önce tüm sayfaları gizle
       pages.forEach(page => {
         const element = document.getElementById(page);
         if (element) {
-          element.classList.add('hidden');
+          element.classList.add('hidden'); // Gizle
         }
       });
 
+      // İstenen sayfayı göster
       if (pageName === 'menu') {
+        // Ana menüye dön
         document.getElementById('main-menu').classList.remove('hidden');
-      } else if (pageName === 'topluluklar') {
-        document.getElementById('topluluklar-page').classList.remove('hidden');
-      } else if (pageName === 'atolyeler') {
-        document.getElementById('atolyeler-page').classList.remove('hidden');
-      } else if (pageName === 'etkinlikler') {
-        document.getElementById('etkinlikler-page').classList.remove('hidden');
-      } else if (pageName === 'munazara') {
-        document.getElementById('munazara-page').classList.remove('hidden');
-      } else if (pageName === 'amacimiz') {
-        document.getElementById('amacimiz-page').classList.remove('hidden');
-      } else if (pageName === 'hakkimizda') {
-        document.getElementById('hakkimizda-page').classList.remove('hidden');
-      } else if (pageName === 'kahve-gunu') {
-        document.getElementById('kahve-gunu-page').classList.remove('hidden');
+      } else {
+        // Belirtilen sayfayı göster
+        const targetPage = document.getElementById(pageName + '-page');
+        if (targetPage) {
+          targetPage.classList.remove('hidden'); // Göster
+        } else {
+          // Sayfa bulunamazsa ana menüye dön
+          document.getElementById('main-menu').classList.remove('hidden');
+        }
       }
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Sayfanın en üstüne kaydır
+      window.scrollTo(0, 0);
     }
 
+    // Yapılandırma değişikliklerinde sayfayı güncelleyen fonksiyon
+    // Bu fonksiyon metin ve renk değişikliklerini uygular
     async function onConfigChange(config) {
-      const institutionName = config.main_institution || defaultConfig.main_institution;
-      const yurtName = config.main_title || defaultConfig.main_title;
-      const motto = config.motto || defaultConfig.motto;
-      const primaryColor = config.primary_color || defaultConfig.primary_color;
-      const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
-      const backgroundColor = config.background_color || defaultConfig.background_color;
-      const textColor = config.text_color || defaultConfig.text_color;
-      const cardColor = config.card_color || defaultConfig.card_color;
+      // Başlık alanındaki metin öğelerini al
+      const mainInstitution = document.getElementById('main-institution');
+      const mainTitle = document.getElementById('main-title');
+      const motto = document.getElementById('motto');
 
-      document.getElementById('institution-name').textContent = institutionName;
-      document.getElementById('yurt-name').textContent = yurtName;
-      document.getElementById('motto').textContent = motto;
+      // Metin içeriklerini güncelle (yoksa varsayılanı kullan)
+      if (mainInstitution) mainInstitution.textContent = config.main_institution || defaultConfig.main_institution;
+      if (mainTitle) mainTitle.textContent = config.main_title || defaultConfig.main_title;
+      if (motto) motto.textContent = config.motto || defaultConfig.motto;
 
-      document.querySelector('.page-container').style.backgroundColor = backgroundColor;
+      // Renk değerlerini al (yoksa varsayılanları kullan)
+      const primaryColor = config.primary_color || defaultConfig.primary_color; // Ana renk
+      const secondaryColor = config.secondary_color || defaultConfig.secondary_color; // İkincil renk
+      const backgroundColor = config.background_color || defaultConfig.background_color; // Arka plan
+      const textColor = config.text_color || defaultConfig.text_color; // Metin rengi
+      const cardColor = config.card_color || defaultConfig.card_color; // Kart rengi
+
+      // Sayfa arka planı ve metin rengini ayarla
+      document.body.style.backgroundColor = backgroundColor;
       document.body.style.color = textColor;
 
-      const headerElements = document.querySelectorAll('.header-gradient');
-      headerElements.forEach(el => {
-        el.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+      // Başlık alanlarına gradient renk uygula
+      const headers = document.querySelectorAll('.header-gradient');
+      headers.forEach(header => {
+        header.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
       });
 
-      const cards = document.querySelectorAll('.content-card, .menu-card, .photo-card');
-      cards.forEach(card => {
+      // Menü butonlarının arka plan rengini ayarla
+      const menuButtons = document.querySelectorAll('.menu-button');
+      menuButtons.forEach(button => {
+        button.style.backgroundColor = cardColor;
+      });
+
+      // İçerik kartlarının arka plan rengini ayarla
+      const contentCards = document.querySelectorAll('.content-card');
+      contentCards.forEach(card => {
         card.style.backgroundColor = cardColor;
       });
 
+      // Geri butonlarının rengini ayarla
       const backButtons = document.querySelectorAll('.back-button');
-      backButtons.forEach(btn => {
-        btn.style.backgroundColor = primaryColor;
+      backButtons.forEach(button => {
+        button.style.backgroundColor = secondaryColor;
       });
     }
 
+    // Element SDK'yı başlat - bu sayede Canva arayüzünden düzenleme yapılabilir
     if (window.elementSdk) {
       window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
+        defaultConfig, // Varsayılan yapılandırmayı kullan
+        onConfigChange, // Değişiklikleri uygulayan fonksiyon
+        
+        // Renk özelleştirme yetenekleri - Canva'da düzenlenebilir renkler
         mapToCapabilities: (config) => ({
-          recolorables: [
-            {
-              get: () => config.background_color || defaultConfig.background_color,
-              set: (value) => {
-                config.background_color = value;
-                window.elementSdk.setConfig({ background_color: value });
-              }
-            },
-            {
-              get: () => config.card_color || defaultConfig.card_color,
-              set: (value) => {
-                config.card_color = value;
-                window.elementSdk.setConfig({ card_color: value });
-              }
-            },
-            {
-              get: () => config.text_color || defaultConfig.text_color,
-              set: (value) => {
-                config.text_color = value;
-                window.elementSdk.setConfig({ text_color: value });
-              }
-            },
+          recolorables: [ // Düzenlenebilir renk listesi
+            // 1. Ana renk (primary_color) - Başlık gradient başlangıcı
             {
               get: () => config.primary_color || defaultConfig.primary_color,
               set: (value) => {
@@ -699,29 +1463,52 @@
                 window.elementSdk.setConfig({ primary_color: value });
               }
             },
+            // 2. İkincil renk (secondary_color) - Başlık gradient bitişi ve butonlar
             {
               get: () => config.secondary_color || defaultConfig.secondary_color,
               set: (value) => {
                 config.secondary_color = value;
                 window.elementSdk.setConfig({ secondary_color: value });
               }
+            },
+            // 3. Arka plan rengi (background_color) - Sayfa arka planı
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            // 4. Metin rengi (text_color) - Tüm metinler
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            // 5. Kart rengi (card_color) - Menü butonları ve içerik kartları
+            {
+              get: () => config.card_color || defaultConfig.card_color,
+              set: (value) => {
+                config.card_color = value;
+                window.elementSdk.setConfig({ card_color: value });
+              }
             }
           ],
-          borderables: [],
-          fontEditable: undefined,
-          fontSizeable: undefined
+          borderables: [], // Kenarlık düzenleme yok
+          fontEditable: undefined, // Font düzenleme yok
+          fontSizeable: undefined // Font boyutu düzenleme yok
         }),
+        
+        // Düzenleme paneli değerleri - Canva arayüzünde gösterilecek metin alanları
         mapToEditPanelValues: (config) => new Map([
-          ["main_institution", config.main_institution || defaultConfig.main_institution],
-          ["main_title", config.main_title || defaultConfig.main_title],
-          ["motto", config.motto || defaultConfig.motto]
+          ["main_institution", config.main_institution || defaultConfig.main_institution], // Kurum adı
+          ["main_title", config.main_title || defaultConfig.main_title], // Yurt başlığı
+          ["motto", config.motto || defaultConfig.motto] // Motto
         ])
       });
     }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      onConfigChange(window.elementSdk?.config || defaultConfig);
-    });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9aa60c6823b4d5ef',t:'MTc2NTEzMTc0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9aee657e276f26ad',t:'MTc2NTg5MDM3MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
