@@ -53,8 +53,8 @@
       box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
     }
   </style>
-  <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <style>body { box-sizing: border-box; }</style>
  </head>
  <body class="h-full">
   <div class="min-h-full w-full flex flex-col" style="background-color: #f5f5f5;">
@@ -66,114 +66,76 @@
      <h2 class="text-xl md:text-2xl font-semibold mb-3">Samsun Atakum Yükseköğretim Kız Öğrenci Yurdu</h2>
      <p class="text-base md:text-lg opacity-90 italic">Yeryüzünde iyilik egemen oluncaya dek</p>
     </div>
-   </header>
-   
-   <!-- ANA SAYFA / MENÜ -->
+   </header><!-- ANA SAYFA / MENÜ -->
    <div id="main-menu" class="max-w-7xl mx-auto px-6 py-12 w-full">
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-6"><button onclick="showPage('topluluklar')" class="menu-button p-8 rounded-xl shadow-lg text-center">
       <div class="text-6xl mb-4">
        👥
       </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Topluluklar</h3><p class="text-gray-600">Yurdumuzdaki aktif topluluklar</p></button> <button onclick="showPage('atolyeler')" class="menu-button p-8 rounded-xl shadow-lg text-center">
-
       <div class="text-6xl mb-4">
        🎨
       </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Atölyeler</h3><p class="text-gray-600">Çeşitli atölye çalışmaları</p></button> <button onclick="showPage('etkinlikler')" class="menu-button p-8 rounded-xl shadow-lg text-center">
-
       <div class="text-6xl mb-4">
        🎉
       </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Etkinlikler</h3><p class="text-gray-600">Düzenlenen özel etkinlikler</p></button> <button onclick="showPage('videolar')" class="menu-button p-8 rounded-xl shadow-lg text-center">
-
       <div class="text-6xl mb-4">
        🎬
       </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Videolar</h3><p class="text-gray-600">Etkinlik videoları</p></button> <button onclick="showPage('hakkimizda')" class="menu-button p-8 rounded-xl shadow-lg text-center">
-
       <div class="text-6xl mb-4">
        ℹ️
-      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Hakkımızda</h3><p class="text-gray-600">Yurdumuz hakkında bilgi</p>
-    </button>
+      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Hakkımızda</h3><p class="text-gray-600">Yurdumuz hakkında bilgi</p></button>
     </div>
-
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><button onclick="showPage('duyurular')" class="menu-button p-8 rounded-xl shadow-lg text-center">
-
       <div class="text-6xl mb-4">
        📢
       </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Duyurular</h3><p class="text-gray-600">Güncel duyurular</p></button> <button onclick="showPage('en-temiz-oda')" class="menu-button p-8 rounded-xl shadow-lg text-center">
-
       <div class="text-6xl mb-4">
        🏆
       </div><h3 class="text-2xl font-bold text-gray-800 mb-2">En Temiz Oda</h3><p class="text-gray-600">Haftanın kazananları</p></button> <button onclick="showPage('siir-kosesi')" class="menu-button p-8 rounded-xl shadow-lg text-center">
-
       <div class="text-6xl mb-4">
        📝
       </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Şiir Köşesi</h3><p class="text-gray-600">Haftanın şiirleri</p></button> <button onclick="showPage('amacimiz')" class="menu-button p-8 rounded-xl shadow-lg text-center">
-
       <div class="text-6xl mb-4">
        🎯
       </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Amacımız</h3><p class="text-gray-600">Misyon ve vizyonumuz</p></button> <button onclick="showPage('veli-videolari')" class="menu-button p-8 rounded-xl shadow-lg text-center">
-
       <div class="text-6xl mb-4">
        🎥
-      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Veli Görüşleri</h3><p class="text-gray-600">Velilerimizin düşünceleri</p></button> <button onclick="showPage('iftar-buluşmalarımız')" class="menu-button p-8 rounded-xl shadow-lg text-center">
-      
-      <div class="text-6x1 mb-4>">
-        🌙 🌙
-           🌙
-
-      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">İftar Buluşmalarımız</h3><p class="text-gray>-600">Ramazan ayında düzenlenen iftar etkinlikleri</p></button>
-
-    </div>
-
-
-    <!--   ETKİNLİK TAKVİMİ --> 
+      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">Veli Görüşleri</h3><p class="text-gray-600">Velilerimizin düşünceleri</p></button> <button onclick="showPage('iftar-bulusmalarimiz')" class="menu-button p-8 rounded-xl shadow-lg text-center">
+      <div class="text-6xl mb-4">
+       🌙
+      </div><h3 class="text-2xl font-bold text-gray-800 mb-2">İftar Buluşmalarımız</h3><p class="text-gray-600">Ramazan ayında düzenlenen iftar etkinlikleri</p></button>
+    </div><!-- ETKİNLİK TAKVİMİ -->
     <div class="content-card p-8 rounded-lg shadow-lg mt-8">
      <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">📅 Etkinlik Takvimi</h3>
      <div class="text-center"><img src="images/takvim.jpg" alt="Etkinlik Takvimi" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
      </div>
     </div>
-   </div>
-   
-   
-   <!-- TOPLULUKLAR SAYFASI -->
+   </div><!-- TOPLULUKLAR SAYFASI -->
    <div id="topluluklar" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('main-menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">👥 Topluluklar</h2>
-    <div class="space-y-6">
-      
-      <!-- İnovasyon ve Teknoloji Topluluğu -->
+    <div class="space-y-6"><!-- İnovasyon ve Teknoloji Topluluğu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
         💻
        </div>
-
-       <!--Açıklama kısmı -->
        <div>
         <h3 class="text-2xl font-bold text-gray-800">İnovasyon ve Teknoloji Topluluğu</h3>
         <p class="text-sm text-blue-600 font-semibold">Başkan: Tuğba Şahin</p>
        </div>
       </div>
       <p class="text-gray-700 leading-relaxed mb-4">Teknoloji, yazılım ve inovasyon alanlarında öğrencilerimizin gelişimini destekleyen, modern çağın gereksinimlerine uygun projeler üreten topluluk.</p>
-      
-      <!-- Projeler -->
       <div class="bg-purple-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-purple-800 mb-3">💻 Web Sitesi ve QR Kod Projesi</h4>
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src="images/site.png" alt="Web Sitesi" class="w-full h-64 object-cover rounded"> 
-        <img src="images/quar.jpg" alt="QR Kod" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><img src="images/site.png" alt="Web Sitesi" class="w-full h-64 object-cover rounded"> <img src="images/quar.jpg" alt="QR Kod" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Afiş Çalışmaları -->
       <div class="bg-purple-50 p-4 rounded-lg">
        <h4 class="text-xl font-bold text-purple-800 mb-3">📑 Afiş Çalışmalarımız</h4>
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src="images/endulus1.jpg" alt="Endulus Afişleri" class="w-full h-64 object-cover rounded"> 
-        <img src="images/endulus2.jpg" alt="Endulus Afişleri" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><img src="images/endulus1.jpg" alt="Endulus Afişleri" class="w-full h-64 object-cover rounded"> <img src="images/endulus2.jpg" alt="Endulus Afişleri" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-     </div>
-     <!-- inovasyon topluluğu bitişi -->
-     
-     <!-- Manevi ve Sosyal Gelişim Topluluğu -->
+     </div><!-- Manevi ve Sosyal Gelişim Topluluğu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -185,95 +147,47 @@
        </div>
       </div>
       <p class="text-gray-700 leading-relaxed mb-4">Öğrencilerimizin manevi gelişimini destekleyen, sosyal sorumluluk projelerinde aktif rol alan topluluk.</p>
-      
-      <!-- Filistin Yardım -->
       <div class="bg-red-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-red-800 mb-3">🤲 Filistin Yardım Etkinliği</h4>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="images/filistin1.jpg" alt="Filistin Yardım 1" class="w-full h-64 object-cover rounded"> 
-        <img src="images/filistin2.jpg" alt="Filistin Yardım 2" class="w-full h-64 object-cover rounded"> 
-        <img src="images/filistin3.jpg" alt="Filistin Yardım 3" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><img src="images/filistin1.jpg" alt="Filistin Yardım 1" class="w-full h-64 object-cover rounded"> <img src="images/filistin2.jpg" alt="Filistin Yardım 2" class="w-full h-64 object-cover rounded"> <img src="images/filistin3.jpg" alt="Filistin Yardım 3" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Meşk Gecesi -->
       <div class="bg-purple-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-purple-800 mb-3">🎵 Meşk Gecesi</h4>
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src="images/meşk0.jpg" alt="Meşk Gecesi 1" class="w-full h-64 object-cover rounded">
-         <img src="images/meşk1.jpg" alt="Meşk Gecesi 2" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><img src="images/meşk0.jpg" alt="Meşk Gecesi 1" class="w-full h-64 object-cover rounded"> <img src="images/meşk1.jpg" alt="Meşk Gecesi 2" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Gençlik Merkezi Konferansı -->
       <div class="bg-red-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-red-800 mb-3">👨‍🏫 Gençlik Merkezi Hocalarımızla Konferans</h4>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="images/genclik1.jpg" alt="Konferans 1" class="w-full h-64 object-cover rounded"> 
-        <img src="images/genclik2.jpg" alt="Konferans 2" class="w-full h-64 object-cover rounded"> 
-        <img src="images/genclik3.jpg" alt="Konferans 3" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><img src="images/genclik1.jpg" alt="Konferans 1" class="w-full h-64 object-cover rounded"> <img src="images/genclik2.jpg" alt="Konferans 2" class="w-full h-64 object-cover rounded"> <img src="images/genclik3.jpg" alt="Konferans 3" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      
-      <!-- Miniklere Hediye -->
       <div class="bg-red-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-red-800 mb-3">🎁 Miniklere Karne Hediyesi</h4>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="images/atkı.jpg" alt="" class="w-full h-64 object-cover rounded">
-         <img src="images/atkı1.jpg" alt="" class="w-full h-64 object-cover rounded">
-          <img src="images/atkı2.jpg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><img src="images/atkı.jpg" alt="Miniklere Hediye 1" class="w-full h-64 object-cover rounded"> <img src="images/atkı1.jpg" alt="Miniklere Hediye 2" class="w-full h-64 object-cover rounded"> <img src="images/atkı2.jpg" alt="Miniklere Hediye 3" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Beraat Kandili -->
       <div class="bg-red-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-red-800 mb-3">🤲 Beraat Kandilimiz Mübarek Olsun</h4>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="images/helva1.jpg.jpeg" alt="" class="w-full h-64 object-cover rounded"> 
-        <img src="images/helva2.jpg.jpeg" alt="" class="w-full h-64 object-cover rounded"> 
-        <img src="images/helva3.jpg.jpeg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><img src="images/helva1.jpg.jpeg" alt="Beraat Kandili 1" class="w-full h-64 object-cover rounded"> <img src="images/helva2.jpg.jpeg" alt="Beraat Kandili 2" class="w-full h-64 object-cover rounded"> <img src="images/helva3.jpg.jpeg" alt="Beraat Kandili 3" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Regaib Kandili -->
       <div class="bg-blue-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-blue-800 mb-3">🌹 Regaib Kandilimiz Mübarek Olsun</h4>
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src="images/gül4.jpeg" alt="" class="w-full h-64 object-cover rounded"> 
-        <img src="images/gül3.jpeg" alt="" class="w-full h-64 object-cover rounded"> 
-        <img src="images/gül2.jpeg" alt="" class="w-full h-64 object-cover rounded">
-         <img src="images/gül1.jpeg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><img src="images/gül4.jpeg" alt="Regaib Kandili 1" class="w-full h-64 object-cover rounded"> <img src="images/gül3.jpeg" alt="Regaib Kandili 2" class="w-full h-64 object-cover rounded"> <img src="images/gül2.jpeg" alt="Regaib Kandili 3" class="w-full h-64 object-cover rounded"> <img src="images/gül1.jpeg" alt="Regaib Kandili 4" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Sabah Namazı -->
       <div class="bg-red-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-red-800 mb-3">🤲 Sabah Namazı Buluşmalarımız</h4>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="images/namaz1.jpg" alt="" class="w-full h-64 object-cover rounded">
-         <img src="images/namaz2.jpg" alt="" class="w-full h-64 object-cover rounded"> 
-         <img src="images/namaz3.jpg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><img src="images/namaz1.jpg" alt="Sabah Namazı 1" class="w-full h-64 object-cover rounded"> <img src="images/namaz2.jpg" alt="Sabah Namazı 2" class="w-full h-64 object-cover rounded"> <img src="images/namaz3.jpg" alt="Sabah Namazı 3" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Kurs Ziyareti -->
       <div class="bg-blue-50 p-4 rounded-lg">
        <h4 class="text-xl font-bold text-blue-800 mb-3">🌼 Kurs Ziyaretimiz</h4>
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src="images/ersoy3.jpeg" alt="" class="w-full h-64 object-cover rounded"> 
-        <img src="images/ersoy2.jpeg" alt="" class="w-full h-64 object-cover rounded">
-         <img src="images/ersoy1.jpeg" alt="" class="w-full h-64 object-cover rounded">
-          <img src="images/ersoy.jpeg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><img src="images/ersoy3.jpeg" alt="Kurs Ziyareti 1" class="w-full h-64 object-cover rounded"> <img src="images/ersoy2.jpeg" alt="Kurs Ziyareti 2" class="w-full h-64 object-cover rounded"> <img src="images/ersoy1.jpeg" alt="Kurs Ziyareti 3" class="w-full h-64 object-cover rounded"> <img src="images/ersoy.jpeg" alt="Kurs Ziyareti 4" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-
-      <!-- etkinlik bitişi -->
-     </div>
-     
-     <!-- manevi topuluğu bitişi--> 
-      
-     <!-- Mesleki Gelişim Topluluğu -->
+     </div><!-- Mesleki Gelişim Topluluğu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -285,60 +199,30 @@
        </div>
       </div>
       <p class="text-gray-700 leading-relaxed mb-4">Kariyer planlama, iş dünyası ile tanışma ve mesleki becerilerin geliştirilmesine yönelik etkinlikler düzenleyen topluluk.</p>
-      
-      <!-- Öğretmen Günü -->
       <div class="bg-green-50 p-4 rounded-lg mb-4">
-       <h4 class="text-xl font-bold text-green-800 mb-3">👩‍🏫 Öğretmenler Günü</h4><img src="images/14.jpg" alt="" class="w-full h-80 object-cover rounded">
+       <h4 class="text-xl font-bold text-green-800 mb-3">👩‍🏫 Öğretmenler Günü</h4><img src="images/14.jpg" alt="Öğretmenler Günü" class="w-full h-80 object-cover rounded">
       </div>
-      
-      <!-- Mahmut Celalettin Ökten Panosu -->
       <div class="bg-blue-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-blue-800 mb-3">🎨 Mahmut Celalettin Ökten Pano</h4>
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src="images/pano.jpg" alt="" class="w-full h-64 object-cover rounded"> 
-        <img src="images/pano2.jpg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><img src="images/pano.jpg" alt="Pano 1" class="w-full h-64 object-cover rounded"> <img src="images/pano2.jpg" alt="Pano 2" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- AFAD Eğitimi -->
       <div class="bg-red-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-red-800 mb-3">🧯 AFAD Eğitimi</h4>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="images/afad1.jpg" alt="" class="w-full h-64 object-cover rounded">
-         <img src="images/afad2.jpg" alt="" class="w-full h-64 object-cover rounded"> 
-         <img src="images/afad3.jpg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><img src="images/afad1.jpg" alt="AFAD 1" class="w-full h-64 object-cover rounded"> <img src="images/afad2.jpg" alt="AFAD 2" class="w-full h-64 object-cover rounded"> <img src="images/afad3.jpg" alt="AFAD 3" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Sosyal Medyada Güzellik -->
       <div class="bg-blue-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-blue-800 mb-3">🌼 Sosyal Medyada Güzellik Algısı</h4>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="images/psikoloji.jpeg" alt="" class="w-full h-64 object-cover rounded">
-         <img src="images/psikoloji1.jpeg" alt="" class="w-full h-64 object-cover rounded">
-          <img src="images/psikoloji2.jpeg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><img src="images/psikoloji.jpeg" alt="Psikoloji 1" class="w-full h-64 object-cover rounded"> <img src="images/psikoloji1.jpeg" alt="Psikoloji 2" class="w-full h-64 object-cover rounded"> <img src="images/psikoloji2.jpeg" alt="Psikoloji 3" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Şehit Öğretmenler -->
       <div class="bg-red-50 p-4 rounded-lg">
        <h4 class="text-xl font-bold text-red-800 mb-3">👨‍🏫 Şehit Öğretmenlerimiz</h4>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="images/ogretmen1.jpg" alt="" class="w-full h-64 object-cover rounded">
-         <img src="images/ogretmen4.jpg" alt="" class="w-full h-64 object-cover rounded">
-          <img src="images/ogretmen5.jpg" alt="" class="w-full h-64 object-cover rounded">
-           <img src="images/ogretmen3.jpg" alt="" class="w-full h-64 object-cover rounded">
-            <img src="images/ogretmen2.jpg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><img src="images/ogretmen1.jpg" alt="Şehit Öğretmen 1" class="w-full h-64 object-cover rounded"> <img src="images/ogretmen4.jpg" alt="Şehit Öğretmen 2" class="w-full h-64 object-cover rounded"> <img src="images/ogretmen5.jpg" alt="Şehit Öğretmen 3" class="w-full h-64 object-cover rounded"> <img src="images/ogretmen3.jpg" alt="Şehit Öğretmen 4" class="w-full h-64 object-cover rounded"> <img src="images/ogretmen2.jpg" alt="Şehit Öğretmen 5" class="w-full h-64 object-cover rounded">
        </div>
-      </div> 
-
-      <!-- etkinlik bitişi -->
-
-
-     </div>
-     <!-- mesleki topluluğu bitişi -->
-     
-     <!-- Sağlıklı Yaşam Topluluğu -->
+      </div>
+     </div><!-- Sağlıklı Yaşam Topluluğu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -350,31 +234,17 @@
        </div>
       </div>
       <p class="text-gray-700 leading-relaxed mb-4">Fiziksel ve mental sağlığın önemini vurgulamak, sağlıklı yaşam alışkanlıkları kazandırmak ve spor aktiviteleri düzenlemek.</p>
-      
-      <!-- Diyabet Günü -->
       <div class="bg-teal-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-teal-800 mb-3">🩺 Diyabet Günü Menüsü</h4>
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src="images/menü.jpg" alt="" class="w-full h-64 object-cover rounded"> 
-        <img src="images/menü2.jpg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><img src="images/menü.jpg" alt="Menü 1" class="w-full h-64 object-cover rounded"> <img src="images/menü2.jpg" alt="Menü 2" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Ağaç Dikme -->
       <div class="bg-green-50 p-4 rounded-lg">
        <h4 class="text-xl font-bold text-green-800 mb-3">🌳 Ağaç Dikme Günü</h4>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="images/ağaç1.jpg" alt="" class="w-full h-64 object-cover rounded"> 
-        <img src="images/ağaç2.jpg" alt="" class="w-full h-64 object-cover rounded"> 
-        <img src="images/ağaç3.jpg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><img src="images/ağaç1.jpg" alt="Ağaç 1" class="w-full h-64 object-cover rounded"> <img src="images/ağaç2.jpg" alt="Ağaç 2" class="w-full h-64 object-cover rounded"> <img src="images/ağaç3.jpg" alt="Ağaç 3" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      <!-- etkinlik bitişi  -->
-     </div>
-     <!-- sağlıklı yaşam topluluğu bitişi -->
-
-
-     <!-- Kültür ve Sanat Topluluğu -->
+     </div><!-- Kültür ve Sanat Topluluğu -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -385,64 +255,32 @@
         <p class="text-sm text-blue-600 font-semibold">Başkan: Hayrünnisa Çavdar</p>
        </div>
       </div>
-      
-      <!-- Kahve Günü -->
       <div class="bg-amber-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-amber-800 mb-3">☕ Kahve Günü</h4>
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src="images/kahve.jpg" alt="" class="w-full h-64 object-cover rounded"> 
-        <img src="images/kahve2.jpg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><img src="images/kahve.jpg" alt="Kahve 1" class="w-full h-64 object-cover rounded"> <img src="images/kahve2.jpg" alt="Kahve 2" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Tokat Gezisi -->
       <div class="bg-blue-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-blue-800 mb-3">✨ Tokat Gezimiz</h4>
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src="images/Tokat.jpg" alt="" class="w-full h-64 object-cover rounded"> 
-        <img src="images/Tokat3.jpg" alt="" class="w-full h-64 object-cover rounded"> 
-        <img src="images/Tokat2.jpg" alt="" class="w-full h-64 object-cover rounded">
-         <img src="images/Tokat1.jpg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><img src="images/Tokat.jpg" alt="Tokat 1" class="w-full h-64 object-cover rounded"> <img src="images/Tokat3.jpg" alt="Tokat 2" class="w-full h-64 object-cover rounded"> <img src="images/Tokat2.jpg" alt="Tokat 3" class="w-full h-64 object-cover rounded"> <img src="images/Tokat1.jpg" alt="Tokat 4" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Endulus Konferansı -->
       <div class="bg-green-50 p-4 rounded-lg mb-4">
        <h4 class="text-xl font-bold text-green-800 mb-3">📖 Endulus Konferansı</h4>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="images/Endulus5.jpg.jpeg" alt="" class="w-full h-64 object-cover rounded">
-         <img src="images/Endulus3.jpg.jpeg" alt="" class="w-full h-64 object-cover rounded"> 
-         <img src="images/Endulus4.jpg.jpeg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><img src="images/Endulus5.jpg.jpeg" alt="Endulus 1" class="w-full h-64 object-cover rounded"> <img src="images/Endulus3.jpg.jpeg" alt="Endulus 2" class="w-full h-64 object-cover rounded"> <img src="images/Endulus4.jpg.jpeg" alt="Endulus 3" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-      
-      <!-- Yerli Malı Haftası -->
       <div class="bg-red-50 p-4 rounded-lg">
        <h4 class="text-xl font-bold text-red-800 mb-3">🇹🇷 Yerli Malı Haftası</h4>
-       <div class="grid grid-cols-2 gap-2">
-        <img src="images/yerli1.jpg" alt="" class="w-full h-64 object-cover rounded">
-         <img src="images/yerli2.jpg" alt="" class="w-full h-64 object-cover rounded"> 
-         <img src="images/yerli3.jpg" alt="" class="w-full h-64 object-cover rounded"> 
-         <img src="images/yerli4.jpg" alt="" class="w-full h-64 object-cover rounded">
+       <div class="grid grid-cols-2 gap-2"><img src="images/yerli1.jpg" alt="Yerli Malı 1" class="w-full h-64 object-cover rounded"> <img src="images/yerli2.jpg" alt="Yerli Malı 2" class="w-full h-64 object-cover rounded"> <img src="images/yerli3.jpg" alt="Yerli Malı 3" class="w-full h-64 object-cover rounded"> <img src="images/yerli4.jpg" alt="Yerli Malı 4" class="w-full h-64 object-cover rounded">
        </div>
       </div>
-
-      <!-- etkinlik bitişi -->
      </div>
-     <!-- kültür ve sanat topluluğu bitişi -->
     </div>
-    <!-- topluluklar bitişi -->
-
-
-   </div> <!--???????-->
-   
-   <!-- ATÖLYELER SAYFASI -->
+   </div><!-- ATÖLYELER SAYFASI -->
    <div id="atolyeler" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('main-menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎨 Atölyeler</h2>
-    <div class="space-y-6">
-
-
-     <!-- Bendir Atölyesi -->
+    <div class="space-y-6"><!-- Bendir Atölyesi -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -451,23 +289,21 @@
        <h3 class="text-2xl font-bold text-gray-800">Bendir Atölyesi</h3>
       </div>
       <p class="text-gray-700 mb-4">Geleneksel müzik enstrümanı bendir ile ritim ve melodi çalışmaları. Bendir atölyesinde öğrencilerimiz Türk müziğinin temel ritimlerini öğrenirken, kültürel mirası yaşatmaktadırlar.</p>
-      <!-- Bendir Atölyesi Fotoğrafları -->
       <div class="bg-yellow-50 p-4 rounded-lg">
        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <img src="images/bendir1.jpg" alt="Bendir Atölyesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div><img src="images/bendir1.jpg" alt="Bendir Atölyesi 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
          <div style="display: none;" class="text-center py-12 text-gray-500 bg-gray-100 rounded">
           <p class="text-5xl mb-2">🥁</p>
           <p>Bendir 1</p>
          </div>
         </div>
-        <div><img src="images/bendir2.jpg" alt="Bendir Atölyesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div><img src="images/bendir2.jpg" alt="Bendir Atölyesi 2" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
          <div style="display: none;" class="text-center py-12 text-gray-500 bg-gray-100 rounded">
           <p class="text-5xl mb-2">🥁</p>
           <p>Bendir 2</p>
          </div>
         </div>
-        <div><img src="images/bendir3.jpg" alt="Bendir Atölyesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div><img src="images/bendir3.jpg" alt="Bendir Atölyesi 3" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
          <div style="display: none;" class="text-center py-12 text-gray-500 bg-gray-100 rounded">
           <p class="text-5xl mb-2">🥁</p>
           <p>Bendir 3</p>
@@ -475,9 +311,7 @@
         </div>
        </div>
       </div>
-     </div>
-     
-     <!-- İyilik Atölyesi -->
+     </div><!-- İyilik Atölyesi -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -488,21 +322,15 @@
       <p class="text-gray-700 mb-4">Toplumun ihtiyaç duyan kesimlerine yardım etmek amacıyla çeşitli ürünler yapılan atölye. El emeğiyle hazırlanan ürünler düzenlenen etkinliklerde satılarak sosyal projeler desteklenmektedir.</p>
       <div class="bg-pink-50 p-4 rounded-lg">
        <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
-        <div>
-          <img src="images/iyilikkedi.jpg" alt="İyilik Atölyesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div><img src="images/iyilikkedi.jpg" alt="İyilik Atölyesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
          <div style="display: none;" class="text-center py-12 text-gray-500 bg-gray-100 rounded">
           <p class="text-5xl mb-2">💝</p>
           <p>İyilik 1</p>
          </div>
         </div>
-        
-       
        </div>
       </div>
-     </div>
-     
-     
-     <!-- Sanat Atölyesi -->
+     </div><!-- Sanat Atölyesi -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -513,21 +341,19 @@
       <p class="text-gray-700 mb-4">Resim, heykeltıraşlık, seramik ve diğer sanat dallarında yaratıcılığın geliştirildiği atölye. Öğrencilerimiz sanat aracılığıyla kendilerini ifade etme becerisini geliştirmektedirler.</p>
       <div class="bg-purple-50 p-4 rounded-lg">
        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          
-          <img src="images/atolye1.jpg" alt="Sanat Atölyesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div><img src="images/atolye1.jpg" alt="Sanat Atölyesi 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
          <div style="display: none;" class="text-center py-12 text-gray-500 bg-gray-100 rounded">
           <p class="text-5xl mb-2">🎨</p>
           <p>Sanat 1</p>
          </div>
         </div>
-        <div><img src="images/atolye2.jpg" alt="Sanat Atölyesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div><img src="images/atolye2.jpg" alt="Sanat Atölyesi 2" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
          <div style="display: none;" class="text-center py-12 text-gray-500 bg-gray-100 rounded">
           <p class="text-5xl mb-2">🎨</p>
           <p>Sanat 2</p>
          </div>
         </div>
-        <div><img src="images/atolye3.jpg" alt="Sanat Atölyesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div><img src="images/atolye3.jpg" alt="Sanat Atölyesi 3" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
          <div style="display: none;" class="text-center py-12 text-gray-500 bg-gray-100 rounded">
           <p class="text-5xl mb-2">🎨</p>
           <p>Sanat 3</p>
@@ -535,11 +361,7 @@
         </div>
        </div>
       </div>
-     </div>
-     
-     
-     
-     <!-- Kitap Okuma Atölyesi -->
+     </div><!-- Kitap Okuma Atölyesi -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -550,19 +372,19 @@
       <p class="text-gray-700 mb-4">Sosyal ve kültürel içerikli kitapları birlikte okuyup tartışma ortamı. Öğrencilerimiz bu atölyede farklı görüşlerle tanışmakta, okuma alışkanlığı kazanmaktadırlar.</p>
       <div class="bg-blue-50 p-4 rounded-lg">
        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div><img src="images/kitap1.jpg" alt="Kitap Okuma Atölyesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div><img src="images/kitap1.jpg" alt="Kitap Okuma Atölyesi 1" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
          <div style="display: none;" class="text-center py-12 text-gray-500 bg-gray-100 rounded">
           <p class="text-5xl mb-2">📚</p>
           <p>Kitap 1</p>
          </div>
         </div>
-        <div><img src="images/kitap2.jpg" alt="Kitap Okuma Atölyesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div><img src="images/kitap2.jpg" alt="Kitap Okuma Atölyesi 2" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
          <div style="display: none;" class="text-center py-12 text-gray-500 bg-gray-100 rounded">
           <p class="text-5xl mb-2">📚</p>
           <p>Kitap 2</p>
          </div>
         </div>
-        <div><img src="images/kitap3.jpg" alt="Kitap Okuma Atölyesi" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div><img src="images/kitap3.jpg" alt="Kitap Okuma Atölyesi 3" class="w-full h-64 object-cover rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
          <div style="display: none;" class="text-center py-12 text-gray-500 bg-gray-100 rounded">
           <p class="text-5xl mb-2">📚</p>
           <p>Kitap 3</p>
@@ -572,15 +394,10 @@
       </div>
      </div>
     </div>
-   </div>
-   
-   
-   
-   <!-- ETKİNLİKLER SAYFASI -->
+   </div><!-- ETKİNLİKLER SAYFASI -->
    <div id="etkinlikler" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('main-menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎉 Etkinlikler</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-     <!-- Podcast Etkinlikleri -->
      <div class="content-card p-6 rounded-lg shadow-lg border-l-4 border-orange-500">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -592,12 +409,9 @@
        </div>
       </div>
       <p class="text-gray-700 mb-6 leading-relaxed">Farklı konularda sesli içerik oluşturarak, öğrencilerimizin görüşlerini özgürce paylaştığı ve kendi seslerini duyduğu bir platform. Yaratıcılık ve kendini ifade etmeyi destekliyoruz.</p>
-      <div class="grid grid-cols-3 gap-2">
-       <img src="images/podcast1.jpg" alt="Podcast" class="w-full h-32 object-cover rounded hover:shadow-lg transition"> <img src="images/podcast2.jpg" alt="Podcast" class="w-full h-32 object-cover rounded hover:shadow-lg transition"> <img src="images/podcast3.jpg" alt="Podcast" class="w-full h-32 object-cover rounded hover:shadow-lg transition">
+      <div class="grid grid-cols-3 gap-2"><img src="images/podcast1.jpg" alt="Podcast 1" class="w-full h-32 object-cover rounded hover:shadow-lg transition"> <img src="images/podcast2.jpg" alt="Podcast 2" class="w-full h-32 object-cover rounded hover:shadow-lg transition"> <img src="images/podcast3.jpg" alt="Podcast 3" class="w-full h-32 object-cover rounded hover:shadow-lg transition">
       </div>
      </div>
-     
-     <!-- Münazara Etkinlikleri -->
      <div class="content-card p-6 rounded-lg shadow-lg border-l-4 border-purple-500">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -608,18 +422,13 @@
         <p class="text-sm text-purple-600 font-semibold">Eleştirel Düşünme</p>
        </div>
       </div>
-      <p class="text-gray-700 mb-6 leading-relaxed">Öğrencilerimizin eleştirel düşünme becerilerini geliştiren, farklı bakış açılarını tartışma fırsatı sunan ve sağlıklı diyalog ortamı sağlayan etkinlik.</p>
-     <button onclick="showPage('munazara-detay')" class="w-full mt-6 bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-3 rounded-lg hover:shadow-lg transition font-semibold">📋 Münazara Konuları →</button>
+      <p class="text-gray-700 mb-6 leading-relaxed">Öğrencilerimizin eleştirel düşünme becerilerini geliştiren, farklı bakış açılarını tartışma fırsatı sunan ve sağlıklı diyalog ortamı sağlayan etkinlik.</p><button onclick="showPage('munazara-detay')" class="w-full mt-6 bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-3 rounded-lg hover:shadow-lg transition font-semibold">📋 Münazara Konuları →</button>
      </div>
     </div>
-   </div>
-   
-   
-   <!-- MÜNAZARA DETAY SAYFASI -->
+   </div><!-- MÜNAZARA DETAY SAYFASI -->
    <div id="munazara-detay" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('etkinlikler')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Etkinliklere Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎤 Münazara Konuları</h2>
     <div class="space-y-6">
-     <!-- Yapay Zeka Münazarası -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <h3 class="text-2xl font-bold text-blue-700 mb-4">🤖 Yapay Zeka ve İnsan Geleceği</h3>
       <p class="text-gray-700 mb-4">Yapay zekanın insan yaşamına etkileri, fırsatları ve riskler üzerine derinlemesine tartışma. Teknolojinin etik kullanımı ve insanlığın geleceği hakkında farklı bakış açıları sunulmuştur.</p>
@@ -632,15 +441,9 @@
         <li>• İnsani değerlerin korunması</li>
        </ul>
       </div>
-      <div class="mt-4 grid grid-cols-1 md:grid-cols-4 gap-4">
-       <img src="images/resim1.jpg" alt="Yapay Zeka Münazarası" class="w-full h-64 object-cover rounded"> 
-       <img src="images/resim2.jpg" alt="Yapay Zeka Münazarası" class="w-full h-64 object-cover rounded">
-       <img src="images/resim3.jpg" alt="Yapay Zeka Münazarası" class="w-full h-64 object-cover rounded"> 
-       <img src="images/resim4.jpg" alt="Yapay Zeka Münazarası" class="w-full h-64 object-cover rounded">
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-4 gap-4"><img src="images/resim1.jpg" alt="Yapay Zeka Münazarası 1" class="w-full h-64 object-cover rounded"> <img src="images/resim2.jpg" alt="Yapay Zeka Münazarası 2" class="w-full h-64 object-cover rounded"> <img src="images/resim3.jpg" alt="Yapay Zeka Münazarası 3" class="w-full h-64 object-cover rounded"> <img src="images/resim4.jpg" alt="Yapay Zeka Münazarası 4" class="w-full h-64 object-cover rounded">
       </div>
      </div>
-     
-     <!-- Kadının Çalışması Münazarası -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <h3 class="text-2xl font-bold text-purple-700 mb-4">👩‍💼 Kadının Çalışma Hakkı ve Toplumsal Rol</h3>
       <p class="text-gray-700 mb-4">Kadının eğitim, çalışma ve sosyal yaşamdaki rolü üzerine yapılan münazara. Modern toplumda kadın erkek eşitliği, aile yapısı ve kariyer seçimleri tartışılmıştır.</p>
@@ -653,24 +456,14 @@
         <li>• Kültürel değerler ve modernlik</li>
        </ul>
       </div>
-      <div class="mt-4 grid grid-cols-1 md:grid-cols-4 gap-4">
-       <img src="images/1.jpeg" alt="Kadının Çalışması Münazarası" class="w-full h-64 object-cover rounded"> 
-       <img src="images/2.jpeg" alt="Kadının Çalışması Münazarası" class="w-full h-64 object-cover rounded">
-        <img src="images/3.jpeg" alt="Kadının Çalışması Münazarası" class="w-full h-64 object-cover rounded"> 
-       <img src="images/4.jpeg" alt="Kadının Çalışması Münazarası" class="w-full h-64 object-cover rounded">
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-4 gap-4"><img src="images/1.jpeg" alt="Kadının Çalışması Münazarası 1" class="w-full h-64 object-cover rounded"> <img src="images/2.jpeg" alt="Kadının Çalışması Münazarası 2" class="w-full h-64 object-cover rounded"> <img src="images/3.jpeg" alt="Kadının Çalışması Münazarası 3" class="w-full h-64 object-cover rounded"> <img src="images/4.jpeg" alt="Kadının Çalışması Münazarası 4" class="w-full h-64 object-cover rounded">
       </div>
      </div>
     </div>
-   </div>
-   
-   
-   
-   <!-- VIDEOLAR SAYFASI -->
+   </div><!-- VIDEOLAR SAYFASI -->
    <div id="videolar" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('main-menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎬 Videolar</h2>
     <div class="space-y-8">
-      
-      <!-- Kahve Günü -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -680,8 +473,7 @@
       </div>
       <p class="text-gray-700 mb-4">Kültür ve Sanat Topluluğu tarafından düzenlenen kahve günü etkinliğimizden samimi anlar ve sohbetler.</p>
       <div class="bg-amber-50 p-4 rounded-lg">
-       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <source src="images/kahve.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/kahve.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
        </video>
        <div style="display: none;" class="text-center py-12 text-gray-500">
         <p class="text-6xl mb-2">☕</p>
@@ -690,9 +482,6 @@
        <p class="text-xs text-amber-600 font-semibold mt-3 text-center">Kahve kültürü ve keyifli sohbet anları</p>
       </div>
      </div>
-     
-     
-     <!-- Hayvan Besleme -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -702,8 +491,7 @@
       </div>
       <p class="text-gray-700 mb-4">İyilik Atölyesi tarafından düzenlenen sokak hayvanları besleme faaliyetimizden samimi anlar ve sosyal sorumluluk gösterileri.</p>
       <div class="bg-blue-50 p-4 rounded-lg">
-       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <source src="images/iyilikkedi.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/iyilikkedi.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
        </video>
        <div style="display: none;" class="text-center py-12 text-gray-500">
         <p class="text-6xl mb-2">🐾</p>
@@ -712,8 +500,6 @@
        <p class="text-xs text-blue-600 font-semibold mt-3 text-center">Sokak dostlarımıza gösterdiğimiz sevgi ve ilgi</p>
       </div>
      </div>
-     
-     <!-- Yerli Malı Haftası -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -723,8 +509,7 @@
       </div>
       <p class="text-gray-700 mb-4">Yerli malı haftasının gelmesi ile birlikte yurdumuzda gerçekleştirdiğimiz etkinlikten görüntüler.</p>
       <div class="bg-red-50 p-4 rounded-lg">
-       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <source src="images/yerlimalı.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/yerlimalı.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
        </video>
        <div style="display: none;" class="text-center py-12 text-gray-500">
         <p class="text-6xl mb-2">🇹🇷</p>
@@ -733,9 +518,6 @@
        <p class="text-xs text-red-600 font-semibold mt-3 text-center">Yerli Malı Haftası Etkinliğimizden Videomuz</p>
       </div>
      </div>
-     
-     
-     <!-- Filistin Konferansı -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -745,8 +527,7 @@
       </div>
       <p class="text-gray-700 mb-4">Manevi ve Sosyal Gelişim Topluluğu tarafından Gençlik Merkezi işbirliği ile düzenlenen Filistin konferansı.</p>
       <div class="bg-green-50 p-4 rounded-lg">
-       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <source src="images/gençlik.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/gençlik.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
        </video>
        <div style="display: none;" class="text-center py-12 text-gray-500">
         <p class="text-6xl mb-2">🇵🇸</p>
@@ -755,9 +536,6 @@
        <p class="text-xs text-green-600 font-semibold mt-3 text-center">Gençlik Merkezi işbirliği ile gerçekleştirildi</p>
       </div>
      </div>
-     
-     
-     <!-- Şehit Öğretmenler -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -767,8 +545,7 @@
       </div>
       <p class="text-gray-700 mb-4">Şehit öğretmenlerimizi anma ve onlara saygı duruşu programımızdan görüntüler.</p>
       <div class="bg-red-50 p-4 rounded-lg">
-       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <source src="images/ogretmen.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/ogretmen.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
        </video>
        <div style="display: none;" class="text-center py-12 text-gray-500">
         <p class="text-6xl mb-2">🕊️</p>
@@ -777,31 +554,24 @@
        <p class="text-xs text-red-600 font-semibold mt-3 text-center">Şehitlerimizi minnetle anıyoruz</p>
       </div>
      </div>
-     
-     <!-- sanat atolyesi videosu başlangıç -->
-
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
         🎨
        </div>
-       <h3 class="text-2xl font-bold text-gray-800">Cam Boyama Etkinliğimiz </h3>
+       <h3 class="text-2xl font-bold text-gray-800">Cam Boyama Etkinliğimiz</h3>
       </div>
       <p class="text-gray-700 mb-4">Sanat Atolyesinde Gerçekleştirdiğimiz Cam Boyama Etkinliğimiz</p>
       <div class="bg-red-50 p-4 rounded-lg">
-       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <source src="images/sanat1.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/sanat1.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
        </video>
        <div style="display: none;" class="text-center py-12 text-gray-500">
-        <p class="text-6xl mb-2">🇹🇷</p>
-        <p>Sanat Atolyesi </p>
+        <p class="text-6xl mb-2">🎨</p>
+        <p>Sanat Atolyesi</p>
        </div>
-       <p class="text-xs text-red-600 font-semibold mt-3 text-center">Cam Boyama Etkinliğimiz </p>
+       <p class="text-xs text-red-600 font-semibold mt-3 text-center">Cam Boyama Etkinliğimiz</p>
       </div>
      </div>
-     
-     
-     <!-- Sanat Atölyesi -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -811,8 +581,7 @@
       </div>
       <p class="text-gray-700 mb-4">Sanat Atölyesi ile birlikte gerçekleştirdiğimiz Vision Board çalışmasından görüntüler.</p>
       <div class="bg-purple-50 p-4 rounded-lg">
-       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <source src="images/sanat.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/sanat.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
        </video>
        <div style="display: none;" class="text-center py-12 text-gray-500">
         <p class="text-6xl mb-2">🖌️</p>
@@ -821,9 +590,6 @@
        <p class="text-xs text-purple-600 font-semibold mt-3 text-center">Sanat Atölyesi Vision Board Çalışmalarımız</p>
       </div>
      </div>
-     
-     
-     <!-- Ramazan Vision Board -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -833,8 +599,7 @@
       </div>
       <p class="text-gray-700 mb-4">Ramazan'ın gelmesi ile birlikte Ramazan'da gerçekleştirmek istediğimiz etkinliklerin yer aldığı Vision Board çalışmamız.</p>
       <div class="bg-green-50 p-4 rounded-lg">
-       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <source src="images/ramazan.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/ramazan.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
        </video>
        <div style="display: none;" class="text-center py-12 text-gray-500">
         <p class="text-6xl mb-2">🫓</p>
@@ -843,9 +608,6 @@
        <p class="text-xs text-green-600 font-semibold mt-3 text-center">Ramazan Gelmiş Hoşgelmiş</p>
       </div>
      </div>
-     
-     
-     <!-- Tokat Gezisi -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -855,8 +617,7 @@
       </div>
       <p class="text-gray-700 mb-4">Günübirlik olarak gerçekleştirdiğimiz Tokat gezisinden anılardır ve doğanın güzelliğinden paylar.</p>
       <div class="bg-blue-50 p-4 rounded-lg">
-       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <source src="images/tokatgezi.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/tokatgezi.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
        </video>
        <div style="display: none;" class="text-center py-12 text-gray-500">
         <p class="text-6xl mb-2">🏞️</p>
@@ -865,8 +626,6 @@
        <p class="text-xs text-blue-600 font-semibold mt-3 text-center">Tokat'ın güzel anılarından</p>
       </div>
      </div>
-     
-     <!-- AFAD Afet Eğitimi -->
      <div class="content-card p-6 rounded-lg shadow-lg">
       <div class="flex items-center gap-4 mb-4">
        <div class="text-5xl">
@@ -876,8 +635,7 @@
       </div>
       <p class="text-gray-700 mb-4">AFAD tarafından verilen afet bilinçlendirme, hazırlık ve güvenlik eğitimimizden görüntüler.</p>
       <div class="bg-orange-50 p-4 rounded-lg">
-       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <source src="images/afad.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
+       <video controls class="w-full rounded-lg shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><source src="images/afad.mp4" type="video/mp4"> Tarayıcınız video etiketini desteklemiyor.
        </video>
        <div style="display: none;" class="text-center py-12 text-gray-500">
         <p class="text-6xl mb-2">🚨</p>
@@ -887,22 +645,15 @@
       </div>
      </div>
     </div>
-   </div>
-   
-   
-   
-   <!-- HAKKIMIZDA SAYFASI -->
+   </div><!-- HAKKIMIZDA SAYFASI -->
    <div id="hakkimizda" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('main-menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
-    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">ℹ️ Hakkımızda</h2><!-- Ana Bilgi Kartı -->
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">ℹ️ Hakkımızda</h2>
     <div class="content-card p-8 rounded-lg shadow-lg mb-8 border-l-4 border-blue-600">
      <h3 class="text-2xl font-bold text-gray-800 mb-4">TDV Samsun Atakum Yükseköğretim Kız Öğrenci Yurdu</h3>
      <p class="text-gray-700 mb-4 leading-relaxed">Türkiye Diyanet Vakfı tarafından işletilen yurdumuz, Samsun'da yükseköğretim gören kız öğrencilerin barınması, beslenmesi ve eğitimlerinin yanı sıra manevi, sosyal ve kültürel gelişimlerine katkı sağlamak amacıyla kurulmuştur.</p>
      <p class="text-gray-700 mb-4 leading-relaxed">Yurdumuzda kalakalan öğrencilerimize yalnızca barınma ve beslenme imkanı sağlamakla kalmayıp, aynı zamanda onların kişilik gelişimi, eğitim kalitesi ve manevi değerlere bağlılığını artırmaya yönelik çeşitli etkinlikler düzenlemektedir.</p>
      <p class="text-gray-700 leading-relaxed">Topluluklarımız ve atölyelerimizle öğrencilerimizin yeteneklerini keşfetmesine, akademik başarılarını artırmasına ve toplum için değer üretmesine destek olmaktayız.</p>
     </div>
-    
-    
-    <!-- Hizmetler Bölümü -->
     <div class="mb-8">
      <h3 class="text-2xl font-bold text-gray-800 mb-6">🏠 Sunduğumuz Hizmetler</h3>
      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -950,9 +701,6 @@
       </div>
      </div>
     </div>
-    
-    
-    <!-- Değerlerimiz Bölümü -->
     <div class="mb-8">
      <h3 class="text-2xl font-bold text-gray-800 mb-6">✨ Temel Değerlerimiz</h3>
      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -974,9 +722,6 @@
       </div>
      </div>
     </div>
-    
-    
-    <!-- Hedeflerimiz Bölümü -->
     <div>
      <h3 class="text-2xl font-bold text-gray-800 mb-6">🎯 Hedeflerimiz</h3>
      <div class="content-card p-8 rounded-lg shadow-lg">
@@ -1009,10 +754,7 @@
       </ul>
      </div>
     </div>
-   </div>
-   
-   
-   <!-- DUYURULAR SAYFASI -->
+   </div><!-- DUYURULAR SAYFASI -->
    <div id="duyurular" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('main-menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">📢 Duyurular</h2>
     <div class="space-y-4">
@@ -1029,10 +771,7 @@
       <p class="text-gray-700">Sorularınız ve önerileriniz için yönetim ofisine ulaşabilirsiniz.</p>
      </div>
     </div>
-   </div>
-   
-   
-   <!-- EN TEMIZ ODA SAYFASI -->
+   </div><!-- EN TEMIZ ODA SAYFASI -->
    <div id="en-temiz-oda" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('main-menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🏆 En Temiz Oda</h2>
     <div class="content-card p-8 rounded-lg shadow-lg text-center">
@@ -1045,10 +784,7 @@
       <p class="text-lg text-gray-700">600.</p>
      </div>
     </div>
-   </div>
-   
-   
-   <!-- ŞİİR KÖŞESİ SAYFASI -->
+   </div><!-- ŞİİR KÖŞESİ SAYFASI -->
    <div id="siir-kosesi" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('main-menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">📝 Şiir Köşesi</h2>
     <div class="space-y-6">
@@ -1063,10 +799,7 @@
       <p class="text-sm text-gray-600 mt-4">- Öğrencilerimizin eserleri</p>
      </div>
     </div>
-   </div>
-   
-   
-   <!-- AMACIMIZ SAYFASI -->
+   </div><!-- AMACIMIZ SAYFASI -->
    <div id="amacimiz" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('main-menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎯 Amacımız</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1079,10 +812,7 @@
       <p class="text-gray-700 leading-relaxed">Manevi ve ahlaki değerlere sahip, topluma ve ülkeye katkı sağlayacak, akademik başarısı yüksek, ülkesini sevip hizmet etmeye hazır, düşünen ve üretken bireyler yetiştirmek.</p>
      </div>
     </div>
-   </div>
-   
-   
-   <!-- VELİ VİDEOLARI SAYFASI -->
+   </div><!-- VELİ VİDEOLARI SAYFASI -->
    <div id="veli-videolari" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('main-menu')" class="back-button bg-blue-700 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎥 Velilerimiz Ne Diyor?</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -1097,41 +827,19 @@
       <p class="mt-4 text-gray-700 text-center font-semibold">Veli Görüşü 2</p>
      </div>
     </div>
-   </div>
-
-   <!-- İFTAR BULUŞMALARIMIZ -->
-
-  <div id="iftar-buluşmalarımız" class="hidden max-w-7xl mx-auto px-6 py-8 w-full">
-  <button onclick="showPage('main-menu')" class="back-button bg-blue-700 hover:bg-blue-800 transition-colors text-white px-6 py-3 rounded-lg mb-8 flex items-center gap-2">
-    <span>←</span> Ana Menüye Dön
-  </button>
-
-  <div class="bg-red-50 p-6 md:p-10 rounded-2xl shadow-sm border border-red-100">
-    <h4 class="text-2xl md:text-3xl font-bold text-red-800 mb-8 flex items-center gap-3">
-      🤲 İftar Buluşmalarımız
-    </h4>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <img src="images/iftar (3).jpeg" alt="İftar Buluşması" class="w-full h-72 object-cover rounded-xl shadow-md hover:scale-[1.02] transition-transform duration-300">
-      <img src="images/iftar (2).jpeg" alt="İftar Buluşması" class="w-full h-72 object-cover rounded-xl shadow-md hover:scale-[1.02] transition-transform duration-300">
-      <img src="images/iftar (1).jpeg" alt="İftar Buluşması" class="w-full h-72 object-cover rounded-xl shadow-md hover:scale-[1.02] transition-transform duration-300">
+   </div><!-- İFTAR BULUŞMALARIMIZ -->
+   <div id="iftar-bulusmalarimiz" class="hidden max-w-7xl mx-auto px-6 py-8 w-full"><button onclick="showPage('main-menu')" class="back-button bg-blue-700 hover:bg-blue-800 transition-colors text-white px-6 py-3 rounded-lg mb-8 flex items-center gap-2"> <span>←</span> Ana Menüye Dön </button>
+    <div class="bg-red-50 p-6 md:p-10 rounded-2xl shadow-sm border border-red-100">
+     <h4 class="text-2xl md:text-3xl font-bold text-red-800 mb-8 flex items-center gap-3">🤲 İftar Buluşmalarımız</h4>
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"><img src="images/iftar (3).jpeg" alt="İftar Buluşması 1" class="w-full h-72 object-cover rounded-xl shadow-md hover:scale-[1.02] transition-transform duration-300"> <img src="images/iftar (2).jpeg" alt="İftar Buluşması 2" class="w-full h-72 object-cover rounded-xl shadow-md hover:scale-[1.02] transition-transform duration-300"> <img src="images/iftar (1).jpeg" alt="İftar Buluşması 3" class="w-full h-72 object-cover rounded-xl shadow-md hover:scale-[1.02] transition-transform duration-300">
+     </div>
     </div>
+   </div>
   </div>
-</div>
-
-     <!-- iftar buluşmaları bitişi -->
-    </div>
-   </div>
-
-
-
-
-   <!--MENU KISMI -->
-   <script>
-    
+  <script>
     function showPage(pageId, addHistory = true) {
       // Tüm sayfaları gizle
-      const allPages = document.querySelectorAll('[id^="main-menu"], [id^="topluluklar"], [id^="atolyeler"], [id^="etkinlikler"], [id^="munazara-detay"], [id^="videolar"], [id^="hakkimizda"], [id^="duyurular"], [id^="en-temiz-oda"], [id^="siir-kosesi"], [id^="amacimiz"], [id^="veli-videolari"]');
+      const allPages = document.querySelectorAll('[id^="main-menu"], [id^="topluluklar"], [id^="atolyeler"], [id^="etkinlikler"], [id^="munazara-detay"], [id^="videolar"], [id^="hakkimizda"], [id^="duyurular"], [id^="en-temiz-oda"], [id^="siir-kosesi"], [id^="amacimiz"], [id^="veli-videolari"], [id^="iftar-bulusmalarimiz"]');
       
       allPages.forEach(page => {
         page.classList.add('hidden');
@@ -1143,7 +851,6 @@
         selectedPage.classList.remove('hidden');
         window.scrollTo(0, 0);
 
-        // --- GERİ TUŞU İÇİN EKLEME ---
         // Eğer sayfa manuel tıklandıysa (geri tuşuyla gelinmediyse) geçmişe ekle
         if (addHistory) {
           history.pushState({ id: pageId }, "", pageId === 'main-menu' ? " " : "#" + pageId);
@@ -1168,6 +875,6 @@
         history.replaceState({ id: 'main-menu' }, "", " ");
       }
     };
-</script>
-</body>
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d4b850984c4ea94',t:'MTc3MjIzNTU0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
