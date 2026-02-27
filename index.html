@@ -1128,13 +1128,13 @@
 
    <!--MENU KISMI -->
    <script>
-    function showPage(pageId) {
+    
+    function showPage(pageId, addHistory = true) {
       // Tüm sayfaları gizle
       const allPages = document.querySelectorAll('[id^="main-menu"], [id^="topluluklar"], [id^="atolyeler"], [id^="etkinlikler"], [id^="munazara-detay"], [id^="videolar"], [id^="hakkimizda"], [id^="duyurular"], [id^="en-temiz-oda"], [id^="siir-kosesi"], [id^="amacimiz"], [id^="veli-videolari"]');
+      
       allPages.forEach(page => {
-        if (page.id !== pageId) {
-          page.classList.add('hidden');
-        }
+        page.classList.add('hidden');
       });
       
       // Seçilen sayfayı göster
@@ -1142,10 +1142,30 @@
       if (selectedPage) {
         selectedPage.classList.remove('hidden');
         window.scrollTo(0, 0);
+
+        // --- GERİ TUŞU İÇİN EKLEME ---
+        // Eğer sayfa manuel tıklandıysa (geri tuşuyla gelinmediyse) geçmişe ekle
+        if (addHistory) {
+          history.pushState({ id: pageId }, "", pageId === 'main-menu' ? " " : "#" + pageId);
+        }
       }
     }
-   </script>
-  </div>
-  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d4a4f442209aeb3',t:'MTc3MjIyMjg1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d4add5cd28caeb3',t:'MTc3MjIyODY3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
+
+    // Kullanıcı cihazından geri tuşuna bastığında çalışacak kısım
+    window.onpopstate = function(event) {
+      if (event.state && event.state.id) {
+        // Geçmişteki sayfayı göster ama tekrar geçmişe ekleme (addHistory = false)
+        showPage(event.state.id, false);
+      } else {
+        // Eğer geçmişte durum yoksa ana menüye dön
+        showPage('main-menu', false);
+      }
+    };
+
+    // Sayfa ilk yüklendiğinde ana menüyü geçmişe kaydet (ilk geri basışta çıkmasın diye)
+    window.onload = function() {
+      if (!history.state) {
+        history.replaceState({ id: 'main-menu' }, "", " ");
+      }
+    };
+</script>
